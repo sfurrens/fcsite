@@ -3,6 +3,7 @@
 include('sql/conn.php');
 
 $info = get_info();
+$categories = get_imageCategories();
 
 ?>
 
@@ -56,44 +57,41 @@ $info = get_info();
                 <!--vertical Tabs-->
                 <div id="verticalTab">
                     <ul class="resp-tabs-list">
-                        <li>Match 27 may 2018</li>
-                        <li>Teams</li>
+                        <?php
+                        
+                        foreach ($categories as &$category) {
+                            print('
+                                <li>'.htmlspecialchars($category['name']).'</li>
+                            ');
+                        }
+                        ?>
                     </ul>
                     <div class="resp-tabs-container">
                         <div>
-                            <!-- GALLERY -->
-                            <ul id="gridbox1" class="team-gallery">
-                                <li>
-                                    <a class="clb-photo" href="images/photos/l4.jpg" data-rel="photos">
-                                        <img src="images/photos/s4.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li >
-                                    <a class="clb-iframe" href="http://www.youtube.com/embed/1iIZeIy7TqM">
-                                        <img src="images/photos/t4.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clb-iframe" href="http://player.vimeo.com/video/70301553">
-                                        <img src="images/photos/t5.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clb-photo" href="images/photos/l6.jpg" data-rel="photos">
-                                        <img src="images/photos/s6.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clb-link" href="http://www.themeforest.com" target="_blank">
-                                        <img src="images/photos/t6.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clb-photo" href="images/photos/l5.jpg" data-rel="photos">
-                                        <img src="images/photos/s5.jpg" alt="" />
-                                    </a>
-                                </li>
-                            </ul>
+                            <?php
+                        
+                            foreach ($categories as &$category) {
+                                $images = get_imagesByCategory($category['id']);
+                                
+                                print('
+                                    <ul id="'.$category['id'].'" class="team-gallery">
+                                ');
+                                
+                                foreach ($images as &$image) {
+                                    print('
+                                       <li>
+                                            <a class="clb-photo" href="'.$image.'" data-rel="photo">
+                                                <img src="'.$image.'" alt="" />
+                                            </a>
+                                        </li>
+                                    ');
+                                }
+                                
+                                print('
+                                    </ul>
+                                ');
+                            }
+                            ?>
                         </div>
                         <div>
                             <!-- GALLERY 2 -->
