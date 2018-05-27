@@ -56,56 +56,39 @@ $info = get_info();
                 <!--vertical Tabs-->
                 <div id="verticalTab">
                     <ul class="resp-tabs-list">
-                        <li>Gallery</li>
-                        <li>Another Gallery</li>
-                        <li>Gallery without filters</li>
+                        <li>Match 27 may 2018</li>
+                        <li>Teams</li>
                     </ul>
                     <div class="resp-tabs-container">
                         <div>
-                            <!-- FILTERS -->
-                            <ul id="filters1" class="filters">
-                                <li>
-                                    <a href="galleries.html#" data-filter="all" class="active">All</a>
-                                </li>
-                                <li>
-                                    <a href="galleries.html#" data-filter="photos">Photos</a>
-                                </li>
-                                <li>
-                                    <a href="galleries.html#" data-filter="videos">Videos</a>
-                                </li>
-                                <li>
-                                    <a href="galleries.html#" data-filter="links">Links</a>
-                                </li>
-                            </ul>
-                            <div class="clear"></div>
                             <!-- GALLERY -->
                             <ul id="gridbox1" class="team-gallery">
-                                <li data-filter="photos">
+                                <li>
                                     <a class="clb-photo" href="images/photos/l4.jpg" data-rel="photos">
                                         <img src="images/photos/s4.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="videos">
+                                <li >
                                     <a class="clb-iframe" href="http://www.youtube.com/embed/1iIZeIy7TqM">
                                         <img src="images/photos/t4.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="videos">
+                                <li>
                                     <a class="clb-iframe" href="http://player.vimeo.com/video/70301553">
                                         <img src="images/photos/t5.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="photos">
+                                <li>
                                     <a class="clb-photo" href="images/photos/l6.jpg" data-rel="photos">
                                         <img src="images/photos/s6.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="links">
+                                <li>
                                     <a class="clb-link" href="http://www.themeforest.com" target="_blank">
                                         <img src="images/photos/t6.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="photos">
+                                <li>
                                     <a class="clb-photo" href="images/photos/l5.jpg" data-rel="photos">
                                         <img src="images/photos/s5.jpg" alt="" />
                                     </a>
@@ -113,90 +96,39 @@ $info = get_info();
                             </ul>
                         </div>
                         <div>
-                            <!-- FILTERS 2 -->
-                            <ul id="filters2" class="filters">
-                                <li>
-                                    <a href="galleries.html#" data-filter="all" class="active">All</a>
-                                </li>
-                                <li>
-                                    <a href="galleries.html#" data-filter="photos">Photos</a>
-                                </li>
-                                <li>
-                                    <a href="galleries.html#" data-filter="videos">Videos</a>
-                                </li>
-                                <li>
-                                    <a href="galleries.html#" data-filter="links">Links</a>
-                                </li>
-                            </ul>
-                            <div class="clear"></div>
                             <!-- GALLERY 2 -->
                             <ul id="gridbox2" class="team-gallery">
-                                <li data-filter="photos">
+                                <li>
                                     <a class="clb-photo" href="images/photos/l1.jpg" data-rel="photos2">
                                         <img src="images/photos/s1.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="videos">
+                                <li>
                                     <a class="clb-iframe" href="http://www.youtube.com/embed/1iIZeIy7TqM">
                                         <img src="images/photos/t1.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="photos">
+                                <li>
                                     <a class="clb-photo" href="images/photos/l2.jpg" data-rel="photos2">
                                         <img src="images/photos/s2.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="videos">
+                                <li>
                                     <a class="clb-iframe" href="http://www.dailymotion.com/embed/video/x143vp2">
                                         <img src="images/photos/t2.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="photos">
+                                <li>
                                     <a class="clb-photo" href="images/photos/l3.jpg" data-rel="photos2">
                                         <img src="images/photos/s3.jpg" alt="" />
                                     </a>
                                 </li>
-                                <li data-filter="links">
+                                <li>
                                     <a class="clb-link" href="http://www.themeforest.com" target="_blank">
                                         <img src="images/photos/t3.jpg" alt="" />
                                     </a>
                                 </li>
                             </ul>
-                        </div>
-                        <div>
-                            <!-- GALLERY WITHOUT FILTERS -->
-                            <ul class="team-gallery">
-                            <li>
-                                <a class="clb-photo" href="images/photos/l5.jpg" data-rel="photos3">
-                                    <img src="images/photos/s5.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-iframe" href="http://www.youtube.com/embed/1iIZeIy7TqM">
-                                    <img src="images/photos/t1.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-photo" href="images/photos/l3.jpg" data-rel="photos3">
-                                    <img src="images/photos/s3.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-iframe" href="http://player.vimeo.com/video/70301553">
-                                    <img src="images/photos/t5.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-photo" href="images/photos/l6.jpg" data-rel="photos3">
-                                    <img src="images/photos/s6.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-link" href="http://www.themeforest.com" target="_blank">
-                                    <img src="images/photos/t3.jpg" alt="" />
-                                </a>
-                            </li>
-                        </ul>
                         </div>
                     </div>
                 </div>
