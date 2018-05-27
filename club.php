@@ -10,7 +10,7 @@ $info = get_info();
 <html lang="en">
     
     <head>
-        <title>Our Club</title>
+        <title>Club - <?php print(htmlspecialchars($info['title'])) ?></title>
         <!-- META TAGS -->
         <meta charset="utf-8">
         <meta name="viewport" content="user-scalable=0,width=device-width,height=device-height,initial-scale=1,maximum-scale=1" />
@@ -40,7 +40,7 @@ $info = get_info();
         <header id="header">
             <div class="logo">
                 <img src="<?php print($info['iconPath']) ?>" alt="" />
-                <span><?php print($info['title']) ?></span>
+                <span><?php print(htmlspecialchars($info['title'])) ?></span>
             </div>
         </header>
         <div class="clear"></div>

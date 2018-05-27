@@ -11,7 +11,7 @@ $teamInfo = get_teamInfo();
 <html lang="en">
     
     <head>
-        <title>Our Team</title>
+        <title>Team - <?php print(htmlspecialchars($info['title'])) ?></title>
         <!-- META TAGS -->
         <meta charset="utf-8">
         <meta name="viewport" content="user-scalable=0,width=device-width,height=device-height,initial-scale=1,maximum-scale=1" />
@@ -41,7 +41,7 @@ $teamInfo = get_teamInfo();
         <header id="header">
             <div class="logo">
                 <img src="<?php print($info['iconPath']) ?>" alt="" />
-                <span><?php print($info['title']) ?></span>
+                <span><?php print(htmlspecialchars($info['title'])) ?></span>
             </div>
         </header>
         <div class="clear"></div>
@@ -52,10 +52,11 @@ $teamInfo = get_teamInfo();
         <!-- MAIN CONTAINER -->
         <section class="maincontainer">
             <!-- PAGE TITLE -->
-            <div class="page-title">Our Team</div>
+            <div class="page-title"><?php print(htmlspecialchars($teamInfo['title'])); ?></div>
             <!-- FEATURED IMAGE -->
             <div class="page-img">
-                <img src="images/photos/squad.jpg" alt="" />
+                <?php print('<img src="'.$teamInfo['coverPath'].'" alt="Cover Image" />'); ?>
+                
             </div>
             <!-- PAGE CONTAINER -->
             <section class="pagecontainer using-grid">

@@ -47,14 +47,12 @@ function get_info() {
     $res = $mysqli->query("select * from `".$_DB_INFO_."`;");
     
     // parse all rows
-    while ($r = $res->fetch_assoc()) {
-        $info = array(
-            "title" => $r['title'],
-            "iconPath" => $r['iconPath'],
-            "about" => $r['about']
-        );
-        break;
-    }
+    $r = $res->fetch_assoc();
+    $info = array(
+        "title" => $r['title'],
+        "iconPath" => $r['iconPath'],
+        "about" => $r['about']
+    );
     
     return $info;
 }
@@ -95,27 +93,26 @@ function get_imagesByCategory($categoryId) {
     return $images;
 }
 
-function get_iteamInfo() {
+function get_teamInfo() {
     global $mysqli, $_DB_TEAMINFO_, $_DB_UPLOADS_;
     
     $info = array();
     
     // get all data from news table
-    /*
-    $res = $mysqli->query("select ``title` from `".$_DB_TEAMINFO_."` where `id` = 1 union all select `name`, `ext` from `".$_DB_UPLOADS_."` where `id` in (select `uploadId_cover` from `".$_DB_TEAMINFO_."` where `id` = 1);");
     
-    var_dump($res);
-    */
-    /*
+    $res = $mysqli->query("select `title` from `".$_DB_TEAMINFO_."` where `id` = 1;");
+    
+    $res2 = $mysqli->query("select `name`, `ext` from `".$_DB_UPLOADS_."` where `id` in (select `uploadId_cover` from `".$_DB_TEAMINFO_."` where `id` = 1);");
+    
     // parse all rows
-    while ($r = $res->fetch_assoc()) {
-        $info = array(
-            "id" => $r['id'],
-            "name" => $r['name']
-        );
-        break;
-    }
-    */
+    $r = $res->fetch_assoc();
+    $r2 = $res2->fetch_assoc();
+    
+    $info = array(
+        "title" => $r['title'],
+        "coverPath" => 'uploads/' . $r2['name'] . '.' . $r2['ext']
+    );
+    
     return $info;
 }
 ?>
