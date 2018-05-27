@@ -1,14 +1,5 @@
 <?php
 
-// Report all PHP errors (see changelog)
-error_reporting(E_ALL);
-
-// Report all PHP errors
-error_reporting(-1);
-
-// Same as error_reporting(E_ALL);
-ini_set('error_reporting', E_ALL);
-
 include('sql/conn.php');
 
 $news = get_news();
@@ -55,134 +46,10 @@ $info = get_info();
             </div>
         </header>
         <div class="clear"></div>
+        
         <!-- MAIN MENU -->
-        <section id="mainmenu-container">
-            <a class="toggleMenu" href="index.html#">Menu</a>
-            <nav>
-                <ul id="mainmenu">
-                    <li>
-                        <a href="index.html">
-                            <span>Homepage</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="index.html">
-                                    <span>Flexslider</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index2.html">
-                                    <span>You Tube TV</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="index.html#">
-                            <span>Pages</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="club.html">
-                                    <span>Our Club</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="team.html">
-                                    <span>Our Team</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="features.html">
-                                    <span>Features</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout.html">
-                                    <span>Layout</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="fixtures.html">
-                                    <span>Fixtures</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="result.html">
-                                    <span>Match Result</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span>Dropdown</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="index.html#">
-                                            <span>Item 1</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html#">
-                                            <span>Item 2</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html#">
-                                            <span>Item 3</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html#">
-                                            <span>Item 4</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="galleries.html">
-                            <span>Gallery</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="galleries.html">
-                                    <span>Galleries</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="single-gallery.html">
-                                    <span>Single Gallery</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="blog.html">
-                            <span>Blog</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="blog.html">
-                                    <span>Blog</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="single-post.html">
-                                    <span>Single Post</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html">
-                            <span>Contact</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
+        <?php include('menu.php'); ?>
+        
         <!-- MAIN CONTAINER -->
         <section class="maincontainer">
             <!-- FLEXSLIDER -->
@@ -207,6 +74,7 @@ $info = get_info();
                 </div>
             </section>
             <div class="clear"></div>
+            
             <!-- FIXTURE TITLE -->
             <div class="scores-title">Upcoming Matches & Latest Results</div>
             <!-- FIXTURE SLIDER (not implemented right now) -->
@@ -254,6 +122,7 @@ $info = get_info();
                 </div>
                 <div class="clear"></div>
             </section -->
+            
             <!-- PAGE CONTAINER -->
             <section class="pagecontainer">
                 <!-- LEFT CONTAINER -->
@@ -289,16 +158,18 @@ $info = get_info();
                         </div>
                     </div>
                 </section>
+                
                 <!-- RIGHT CONTAINER -->
                 <section class="rightcontainer">
-                    <!-- SIDEBAR BOX -->
-                    <div class="sidebarbox">
+                    <!-- SIDEBAR BOX (search not implemented yet) -->
+                    <!-- div class="sidebarbox">
                         <h3>Search</h3>
                         <form id="searchform" class="searchbox">
                             <input type="text" id="search" class="field searchtext" placeholder="Keyword..." />
                             <input type="submit" class="button" name="submit" value="Go" />
                         </form>
-                    </div>
+                    </div -->
+                    
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
                         <h3>About Our Team</h3>
@@ -306,6 +177,7 @@ $info = get_info();
                             <a href="club.html">Read More...</a>
                         </p>
                     </div>
+                    
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
                         <div class="sidebarbox-title">
