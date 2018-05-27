@@ -1,0 +1,4 @@
+3.1.1 avalehe loomine:
+avaleht ehk indeks leht peakb andma lehe kylastajale koheselt ylevaate
+mis fc timmiga tegemist, mis matsid on peetud ja veel pidada, seega esilehele on
+kohe toodud uudised

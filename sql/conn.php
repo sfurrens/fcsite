@@ -101,10 +101,11 @@ function get_iteamInfo() {
     $info = array();
     
     // get all data from news table
+    /*
     $res = $mysqli->query("select ``title` from `".$_DB_TEAMINFO_."` where `id` = 1 union all select `name`, `ext` from `".$_DB_UPLOADS_."` where `id` in (select `uploadId_cover` from `".$_DB_TEAMINFO_."` where `id` = 1);");
     
     var_dump($res);
-    
+    */
     /*
     // parse all rows
     while ($r = $res->fetch_assoc()) {
