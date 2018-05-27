@@ -3,16 +3,16 @@
     <nav id="submenu">
         <ul>
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li>
-                <a href="club.html">Our Club</a>
+                <a href="club.php">Our Club</a>
             </li>
             <li>
-                <a href="galleries.html">Gallery</a>
+                <a href="galleries.php">Gallery</a>
             </li>
             <li>
-                <a href="contact.html">Contact</a>
+                <a href="contact.php">Contact</a>
             </li>
         </ul>
     </nav>
