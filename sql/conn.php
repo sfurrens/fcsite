@@ -11,6 +11,7 @@ $_DB_INFO_           = "info";
 $_DB_UPLOADS_        = "uploads";
 $_DB_GALLERY_        = "gallery";
 $_DB_IMAGECATEGORY_  = "imageCategory";
+$_DB_TEAMINFO_       = "teamInfo";
 
 $mysqli = new mysqli($_HOST_, $_DBUSER_, $_DBPASS_, $_DATABASE_);
 $mysqli->set_charset("utf8");
@@ -94,4 +95,26 @@ function get_imagesByCategory($categoryId) {
     return $images;
 }
 
+function get_iteamInfo() {
+    global $mysqli, $_DB_TEAMINFO_, $_DB_UPLOADS_;
+    
+    $info = array();
+    
+    // get all data from news table
+    $res = $mysqli->query("select ``title` from `".$_DB_TEAMINFO_."` where `id` = 1 union all select `name`, `ext` from `".$_DB_UPLOADS_."` where `id` in (select `uploadId_cover` from `".$_DB_TEAMINFO_."` where `id` = 1);");
+    
+    var_dump($res);
+    
+    /*
+    // parse all rows
+    while ($r = $res->fetch_assoc()) {
+        $info = array(
+            "id" => $r['id'],
+            "name" => $r['name']
+        );
+        break;
+    }
+    */
+    return $info;
+}
 ?>

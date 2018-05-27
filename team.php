@@ -3,6 +3,7 @@
 include('sql/conn.php');
 
 $info = get_info();
+$teamInfo = get_teamInfo();
 
 ?>
 
