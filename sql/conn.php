@@ -7,6 +7,7 @@ $_DATABASE_         = "epree_22138974_fc";
 
 
 $_DB_NEWS_           = "news";
+$_DB_INFO_           = "info";
 
 $mysqli = new mysqli($_HOST_, $_DBUSER_, $_DBPASS_, $_DATABASE_);
 
@@ -32,4 +33,27 @@ function get_news() {
     
     return $news;
 }
+
+function get_info() {
+    global $mysqli, $_DB_INFO_;
+    
+    $info = array();
+    
+    // get all data from news table
+    $res = $mysqli->query("select * from `".$_DB_INFO_."`;");
+    //$res = $mysqli->query("show tables;");
+    
+    // parse all rows
+    while ($r = $res->fetch_assoc()) {
+        $info = array(
+            "title" => $r['title'],
+            "iconPath" => $r['iconPath'],
+            "about" => $r['about']
+        );
+        break;
+    }
+    
+    return $info;
+}
+
 ?>
