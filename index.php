@@ -1,3 +1,21 @@
+<?php
+
+// Report all PHP errors (see changelog)
+error_reporting(E_ALL);
+
+// Report all PHP errors
+error_reporting(-1);
+
+// Same as error_reporting(E_ALL);
+ini_set('error_reporting', E_ALL);
+
+include('sql/conn.php');
+
+$news = get_news();
+get_news();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     
@@ -199,35 +217,28 @@
             <section class="flex-wrapper">
                 <div id="slider" class="flexslider">
                     <ul class="slides">
-                        <li>
-                            <div class="flex-title">
-                                <h3>Apolloni Codicellos</h3>
-                                <p>Quo eram amet aliqua incurreret et de velit duis aut iudicem. Culpa voluptatibus incurreret magna deserunt.</p>
-                            </div>
-                            <img src="images/photos/large1.jpg" alt="" />
-                        </li>
-                        <li>
-                            <div class="flex-title">
-                                <h3>Apolloni Codicellos</h3>
-                                <p>Quo eram amet aliqua incurreret et de velit duis aut iudicem. Culpa voluptatibus incurreret magna deserunt.</p>
-                            </div>
-                            <img src="images/photos/large2.jpg" alt="" />
-                        </li>
-                        <li>
-                            <div class="flex-title">
-                                <h3>Apolloni Codicellos</h3>
-                                <p>Quo eram amet aliqua incurreret et de velit duis aut iudicem. Culpa voluptatibus incurreret magna deserunt.</p>
-                            </div>
-                            <img src="images/photos/large3.jpg" alt="" />
-                        </li>
+                        <?php
+                        
+                        foreach ($news as &$new) {
+                            print('
+                                <li>
+                                    <div class="flex-title">
+                                        <h3>'.$new['title'].'</h3>
+                                        <p>'.$new['description'].'</p>
+                                    </div>
+                                    <img src="'.$new['imagePath'].'" alt="" />
+                                </li>
+                            ');
+                        }
+                        ?>
                     </ul>
                 </div>
             </section>
             <div class="clear"></div>
             <!-- FIXTURE TITLE -->
             <div class="scores-title">Upcoming Matches & Latest Results</div>
-            <!-- FIXTURE SLIDER -->
-            <section class="transparent-bg">
+            <!-- FIXTURE SLIDER (not implemented right now) -->
+            <!-- section class="transparent-bg">
                 <div id="fixture">
                     <div class="slide-content">
                         <div class="match-results">
@@ -270,60 +281,34 @@
                     </div>
                 </div>
                 <div class="clear"></div>
-            </section>
+            </section -->
             <!-- PAGE CONTAINER -->
             <section class="pagecontainer">
                 <!-- LEFT CONTAINER -->
                 <section class="leftcontainer">
                     <h1>Latest News</h1>
                     <hr/>
-                    <!-- POST -->
-                    <article class="post">
-                        <figure>
-                            <a href="single-post.html">
-                                <img src="images/photos/blog1.jpg" alt="" />
-                            </a>
-                            <figcaption>
-                                <h2>Post Title</h2>
-                                <div class="post-date">June,12 2014</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ipsum quis diam aliquam vel mollis nisi tempus. Nam et ante urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam luctus, mi vel tincidunt pulvinar, lectus urna vestibulum velit, et pharetra enim sapien eget orci. Mauris in porta neque. In hac habitasse platea dictumst.
-                            <a href="single-post.html">Read more...</a>
-                        </p>
-                    </article>
-                    <hr/>
-                    <!-- POST -->
-                    <article class="post">
-                        <figure>
-                            <a href="single-post.html">
-                                <img src="images/photos/blog2.jpg" alt="" />
-                            </a>
-                            <figcaption>
-                                <h2>Post Title</h2>
-                                <div class="post-date">June,09 2014</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ipsum quis diam aliquam vel mollis nisi tempus. Nam et ante urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam luctus, mi vel tincidunt pulvinar, lectus urna vestibulum velit, et pharetra enim sapien eget orci. Mauris in porta neque. In hac habitasse platea dictumst.
-                            <a href="single-post.html">Read more...</a>
-                        </p>
-                    </article>
-                    <hr/>
-                    <!-- POST -->
-                    <article class="post">
-                        <figure>
-                            <a href="single-post.html">
-                                <img src="images/photos/blog3.jpg" alt="" />
-                            </a>
-                            <figcaption>
-                                <h2>Post Title</h2>
-                                <div class="post-date">June,05 2014</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ipsum quis diam aliquam vel mollis nisi tempus. Nam et ante urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam luctus, mi vel tincidunt pulvinar, lectus urna vestibulum velit, et pharetra enim sapien eget orci. Mauris in porta neque. In hac habitasse platea dictumst.
-                            <a href="single-post.html">Read more...</a>
-                        </p>
-                    </article>
+                    <?php
+
+                    foreach ($news as &$new) {
+                        print('
+                            <article class="post">
+                                <figure>
+                                    <a href="single-post.html">
+                                        <img src="'.$new['imagePath'].'" alt="" />
+                                    </a>
+                                    <figcaption>
+                                        <h2>'.$new['title'].'</h2>
+                                        <div class="post-date">'.$new['date'].'</div>
+                                    </figcaption>
+                                </figure>
+                                <p>'.$new['description'].'
+                                    <a href="single-post.html">Read more...</a>
+                                </p>
+                            </article>
+                        ');
+                    }
+                    ?>
                     <hr/>
                     <!-- VIEW ALL BUTTON -->
                     <div class="blogpager">
