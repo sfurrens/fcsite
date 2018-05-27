@@ -12,7 +12,7 @@ ini_set('error_reporting', E_ALL);
 include('sql/conn.php');
 
 $news = get_news();
-get_news();
+$info = get_info();
 
 ?>
 
@@ -20,7 +20,7 @@ get_news();
 <html lang="en">
     
     <head>
-        <title>Homepage</title>
+        <title><?php print($info['title']) ?></title>
         <!-- META TAGS -->
         <meta charset="utf-8">
         <meta name="viewport" content="user-scalable=0,width=device-width,height=device-height,initial-scale=1,maximum-scale=1" />
@@ -44,42 +44,14 @@ get_news();
     
     <body>
         <!-- SUB MENU -->
-        <section id="submenu-container">
-            <a id="mobile-menu" href="index.html#">Sub Menu</a>
-            <nav id="submenu">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="club.html">Our Club</a>
-                    </li>
-                    <li>
-                        <a href="galleries.html">Gallery</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- LOGIN MENU -->
-            <nav id="submenu-login">
-                <ul>
-                    <li>
-                        <a href="index.html#">Register</a>
-                    </li>
-                    <li>
-                        <a href="index.html#">Login</a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
+        <?php include('nav.php'); ?>
         <div class="clear"></div>
+        
         <!-- HEADER -->
         <header id="header">
             <div class="logo">
-                <img src="images/logo.png" alt="" />
-                <span>Official Website of My Team</span>
+                <img src="<?php print($info['iconPath']) ?>" alt="" />
+                <span><?php print($info['title']) ?></span>
             </div>
         </header>
         <div class="clear"></div>
@@ -330,7 +302,7 @@ get_news();
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
                         <h3>About Our Team</h3>
-                        <p>Elit cernantur in pariatur. Te illum de aute, a incididunt te pariatur. Vidisse aut tempor. Eu aut lorem cernantur, occaecat dolor mandaremus consequat. Do labore excepteur, dolor id admodum. Fabulas fugiat eiusmod incididunt. Si voluptate ita ullamco, iis minim incurreret voluptatibus an officia domesticarum nam cernantur est quis mentitum.
+                        <p><?php print($info['about']) ?>
                             <a href="club.html">Read More...</a>
                         </p>
                     </div>
