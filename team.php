@@ -6,6 +6,8 @@ $info = get_info();
 $teamInfo = get_teamInfo();
 $playerCategories = get_playerCategories();
 
+var_dump($playerCategories);
+
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +67,7 @@ $playerCategories = get_playerCategories();
                     <?php
                     
                     foreach ($playerCategories as &$playerCategory) {
-                        $players = get_playerByCategory($playerCategory['id']);
+                        $players = get_playersByCategory($playerCategory['id']);
                         
                         print('
                             <div class="unit one-quarter teamlist">
@@ -75,7 +77,7 @@ $playerCategories = get_playerCategories();
                         
                         foreach ($players as &$player) {
                             print('
-                                <li></li>
+                                <li>'.$player['name'].'</li>
                             ');
                         }
                         
@@ -85,99 +87,6 @@ $playerCategories = get_playerCategories();
                         ');
                     }
                     ?>
-                    <!-- GOOLKEEPERS -->
-                    <div class="unit one-quarter teamlist">
-                        <h3>Goolkeepers</h3>
-                        <ul>
-                            <li>
-                                <a href="team.html#shelby" class="popup-with-zoom-anim">Shelby Firmin</a>
-                                <!-- POPUP BOX -->
-                                <div id="shelby" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player.jpg" alt="" />
-                                    <h3>1 - Shelby Firmin</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Albert Panfilo</li>
-                            <li>Sebastien Telesphore</li>
-                        </ul>
-                    </div>
-                    <!-- DEFENDERS -->
-                    <div class="unit one-quarter teamlist">
-                        <h3>Defenders</h3>
-                        <ul>
-                            <li>
-                                <a href="team.html#darell" class="popup-with-zoom-anim">Darell Teunis</a>
-                                <!-- POPUP BOX -->
-                                <div id="darell" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player2.jpg" alt="" />
-                                    <h3>4 - Darell Teunis</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Geoffrey Lonnie</li>
-                            <li>Otieno Martie</li>
-                            <li>Lincoln Garry</li>
-                            <li>Kevin Jakob</li>
-                            <li>Hein Bryce</li>
-                        </ul>
-                    </div>
-                    <!-- MIDFIELDERS -->
-                    <div class="unit one-quarter teamlist">
-                        <h3>Midfielders</h3>
-                        <ul>
-                            <li>Kolman Alden</li>
-                            <li>
-                                <a href="team.html#stephan" class="popup-with-zoom-anim">Stephan Michael</a>
-                                <!-- POPUP BOX -->
-                                <div id="stephan" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player.jpg" alt="" />
-                                    <h3>7 - Stephan Michael</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Arthur Max</li>
-                            <li>Tillo Denis</li>
-                            <li>
-                                <a href="team.html#plinio" class="popup-with-zoom-anim">Plinio Angelino</a>
-                                <!-- POPUP BOX -->
-                                <div id="plinio" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player2.jpg" alt="" />
-                                    <h3>7 - Plinio Angelino</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Armando Ed</li>
-                            <li>Timotheus Pancrazio</li>
-                            <li>Edgar Spike</li>
-                        </ul>
-                    </div>
-                    <!-- STRIKERS -->
-                    <div class="unit one-quarter teamlist">
-                        <h3>Strikers</h3>
-                        <ul>
-                            <li>
-                                <a href="team.html#anselmo" class="popup-with-zoom-anim">Anselmo Osvaldo</a>
-                                <!-- POPUP BOX -->
-                                <div id="anselmo" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player.jpg" alt="" />
-                                    <h3>9 - Anselmo Osvaldo</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Abe Gerolt</li>
-                            <li>
-                                <a href="team.html#darrel" class="popup-with-zoom-anim">Darrel Lelio</a>
-                                <!-- POPUP BOX -->
-                                <div id="darrel" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player2.jpg" alt="" />
-                                    <h3>11 - Darrel Lelio</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Buster Clarence</li>
-                        </ul>
-                    </div>
                 </div>
             </section>
             <div class="clear"></div>

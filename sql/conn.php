@@ -136,13 +136,12 @@ function get_playerCategories() {
 }
 
 function get_playersByCategory($category) {
-    global $mysqli, $_DB_PLAYERS;
+    global $mysqli, $_DB_PLAYERS_;
     
     $players = array();
     
     // get all data from news table
-    $res = $mysqli->query("select `name` from `".$_DB_PLAYERS."` where `categoryId` = ".$category.";");
-    
+    $res = $mysqli->query("select * from `".$_DB_PLAYERS_."` where `categoryId` = ".$category.";");
     while ($r = $res->fetch_assoc()) {
         $player = array(
             "name" => $r['name']
