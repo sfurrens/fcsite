@@ -6,8 +6,6 @@ $info = get_info();
 $teamInfo = get_teamInfo();
 $playerCategories = get_playerCategories();
 
-var_dump($playerCategories);
-
 ?>
 
 <!DOCTYPE html>
