@@ -326,7 +326,7 @@ $info = get_info();
                 </div>
             </section>
             <!-- FOOTER -->
-            
+            <?php include('footer.php'); ?>
             <!-- BACK TO TOP BUTTON -->
             <a href="index.html#" class="back-to-top"></a>
         </section>
