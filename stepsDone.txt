@@ -8,4 +8,15 @@ meie tiim inglise keeles our team leht naitab kylastajale kes me oleme,
 kattepilt ja nimed kes, kus, mis positsioonide peal on, mida saab muuta andmebaasist
 
 3.1.3 galerii (GALERY):
-galerii lehel on pildid ara jaotatud categooriatesse mis tulevad andmebaasist
+galerii lehel on pildid ara jaotatud categooriatesse mis tulevad andmebaasist,
+pildi peale klikamise peale pilt suureneb kasutades jquery pluginat Colorbox
+mis on kerge kaaluline kohandatav lightbox plugin jquery`le
+
+3.1.4 blogi (NEWS):
+blogi lehel on viimati lisatud postitused mis yritused on hiljuti labitud voi on tulemas.
+iga postituse peale saa klikata mis toob esile rohkem infot (teksti ja pilte).
+
+3.2 kasutatav arendus mudel:
+veebilehe arendamisel on autor kasutanud kanban arendusmudelit. kanban sobis
+kuna oli vaja töövoogu võimalikut lihtsalt korraldada, kuna sight oli selge.
+

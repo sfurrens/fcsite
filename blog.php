@@ -277,13 +277,10 @@ $info = get_info();
             </section>
             <!-- FOOTER -->
             <?php include('footer.php'); ?>
-            <!-- BACK TO TOP BUTTON -->
-            <a href="blog.html#" class="back-to-top"></a>
         </section>
         <!-- JS FILES -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/backstretch.js"></script>
-        <script type="text/javascript" src="js/jflickrfeed.min.js"></script>
         <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
         <!-- BG IMAGE -->
         <script type="text/javascript">

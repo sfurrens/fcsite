@@ -103,7 +103,6 @@ $categories = get_imageCategories();
         <!-- JS FILES -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/backstretch.js"></script>
-        <script type="text/javascript" src="js/jflickrfeed.min.js"></script>
         <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
         <script type="text/javascript" src="js/easyResponsiveTabs.js"></script>
         <script type="text/javascript" src="js/gallery.js"></script>
