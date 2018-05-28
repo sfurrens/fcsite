@@ -53,7 +53,9 @@ function get_info() {
     $info = array(
         "title" => $r['title'],
         "iconPath" => $r['iconPath'],
-        "about" => $r['about']
+        "faviconPath" => $r['faviconPath'],
+        "about" => $r['about'],
+        "copyright" => $r['copyright']
     );
     
     return $info;

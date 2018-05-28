@@ -18,7 +18,7 @@ $info = get_info();
         <meta name="description" content="">
         <meta name="keywords" content="">
         <!-- CSS FILES -->
-        <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="<?php print($info['faviconPath']) ?>" rel="shortcut icon" type="image/x-icon" />
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
         <link href="css/animate.css" rel="stylesheet" type="text/css">
         <link href="css/style.css" rel="stylesheet" type="text/css">

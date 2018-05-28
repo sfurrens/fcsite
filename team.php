@@ -19,7 +19,7 @@ $playerCategories = get_playerCategories();
         <meta name="description" content="">
         <meta name="keywords" content="">
         <!-- CSS FILES -->
-        <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="<?php print($info['faviconPath']) ?>" rel="shortcut icon" type="image/x-icon" />
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
         <link href="css/animate.css" rel="stylesheet" type="text/css">
         <link href="css/grid.css" rel="stylesheet" type="text/css" />
@@ -90,8 +90,6 @@ $playerCategories = get_playerCategories();
             <div class="clear"></div>
             <!-- FOOTER -->
             <?php include('footer.php'); ?>
-            <!-- BACK TO TOP BUTTON -->
-            <a href="team.html#" class="back-to-top"></a>
         </section>
         <!-- JS FILES -->
         <script type="text/javascript" src="js/jquery.js"></script>

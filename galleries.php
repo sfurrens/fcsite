@@ -18,7 +18,7 @@ $categories = get_imageCategories();
         <meta name="description" content="">
         <meta name="keywords" content="">
         <!-- CSS FILES -->
-        <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="<?php print($info['faviconPath']) ?>" rel="shortcut icon" type="image/x-icon" />
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
         <link href="css/animate.css" rel="stylesheet" type="text/css">
         <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -40,7 +40,7 @@ $categories = get_imageCategories();
         <header id="header">
             <div class="logo">
                 <img src="<?php print($info['iconPath']) ?>" alt="" />
-                <span><?php print($info['title']) ?></span>
+                <span><?php print(htmlspecialchars($info['title'])) ?></span>
             </div>
         </header>
         <div class="clear"></div>
@@ -67,75 +67,38 @@ $categories = get_imageCategories();
                         ?>
                     </ul>
                     <div class="resp-tabs-container">
-                        <div>
-                            <?php
-                        
-                            foreach ($categories as &$category) {
-                                $images = get_imagesByCategory($category['id']);
-                                
-                                print('
+                        <?php
+
+                        foreach ($categories as &$category) {
+                            $images = get_imagesByCategory($category['id']);
+
+                            print('
+                                <div>
                                     <ul id="'.$category['id'].'" class="team-gallery">
-                                ');
-                                
-                                foreach ($images as &$image) {
-                                    print('
-                                       <li>
-                                            <a class="clb-photo" href="'.$image.'" data-rel="photo">
-                                                <img src="'.$image.'" alt="" />
-                                            </a>
-                                        </li>
-                                    ');
-                                }
-                                
+                            ');
+
+                            foreach ($images as &$image) {
                                 print('
-                                    </ul>
+                                   <li>
+                                        <a class="clb-photo" href="'.$image.'" data-rel="photo">
+                                            <img src="'.$image.'" alt="" />
+                                        </a>
+                                    </li>
                                 ');
                             }
-                            ?>
-                        </div>
-                        <div>
-                            <!-- GALLERY 2 -->
-                            <ul id="gridbox2" class="team-gallery">
-                                <li>
-                                    <a class="clb-photo" href="images/photos/l1.jpg" data-rel="photos2">
-                                        <img src="images/photos/s1.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clb-iframe" href="http://www.youtube.com/embed/1iIZeIy7TqM">
-                                        <img src="images/photos/t1.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clb-photo" href="images/photos/l2.jpg" data-rel="photos2">
-                                        <img src="images/photos/s2.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clb-iframe" href="http://www.dailymotion.com/embed/video/x143vp2">
-                                        <img src="images/photos/t2.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clb-photo" href="images/photos/l3.jpg" data-rel="photos2">
-                                        <img src="images/photos/s3.jpg" alt="" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clb-link" href="http://www.themeforest.com" target="_blank">
-                                        <img src="images/photos/t3.jpg" alt="" />
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+
+                            print('
+                                    </ul>
+                            </div>
+                            ');
+                        }
+                        ?>
                     </div>
                 </div>
             </section>
             <div class="clear"></div>
             <!-- FOOTER -->
             <?php include('footer.php'); ?>
-            <!-- BACK TO TOP BUTTON -->
-            <a href="galleries.html#" class="back-to-top"></a>
         </section>
         <!-- JS FILES -->
         <script type="text/javascript" src="js/jquery.js"></script>
@@ -158,22 +121,6 @@ $categories = get_imageCategories();
                     type: 'vertical',
                     width: 'auto',
                     fit: true
-                });
-            });
-        </script>
-        <!-- FILTERS 1 -->
-        <script type="text/javascript">
-            jQuery(document).ready(function() {
-                jQuery("#filters1").dysaniagrid({
-                    galleryid: "#gridbox1"
-                });
-            });
-        </script>
-        <!-- FILTERS 2 -->
-        <script type="text/javascript">
-            jQuery(document).ready(function() {
-                jQuery("#filters2").dysaniagrid({
-                    galleryid: "#gridbox2"
                 });
             });
         </script>
