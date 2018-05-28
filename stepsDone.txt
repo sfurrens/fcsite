@@ -93,7 +93,6 @@ imageCategoryId  - kategooria kuhu pilt pilt kuulub
 tabel `imageCategory` sisaldab endas kategoorijaid mida kuvatakse galerii lehel.
 tabelisse sisestatkse kategooria nimi ja `id` antakse talle automaatselt
 
-
 id               - integet, legth(11), not null, primary key, auto increment
 name             - varchar, legth(256), not null, charset(latin1_swedish_ci)
 
@@ -103,12 +102,59 @@ name             - kategooria nimetus
 
 
 4.1.5 players:
+tabel `players` sisaldab endas mängijate nimesi kes on tiimis ja mis positsioonil nad mäangivad.
+tabelisse sisestatkse mängijate nimesi ja seos `playerCategory` tablisse,
+kus mäangija positsiooni nimi
+
+id               - integet, legth(11), not null, primary key, auto increment
+name             - varchar, legth(256), not null, charset(latin1_swedish_ci)
+categoryId       - integet, legth(11), not null
+
+seletused:
+id               - primaar voti mis on unikaalneja identifitseerib yhe kirje
+name             - mängija nimi
+categoryId       - seos `playerCategory` tabelile
+
 
 4.1.6 playerCategory:
+tabel `playerCategory` sisaldab endas mängijate positsioonide nimesi, mida kuvatakse
+galerii lehel galeriidena.
+
+id               - integet, legth(11), not null, primary key, auto increment
+name             - varchar, legth(256), not null, charset(latin1_swedish_ci)
+
+seletused:
+id               - primaar voti mis on unikaalneja identifitseerib yhe kirje
+name             - kategooria nimi
+
 
 4.1.7 teamInfo:
+tabel `teamInfo` sisaldab endas tiimi nime ja seos `uploads` tablisse 
+kus üleslaetud kaanefoto pilt
+
+id               - integet, legth(11), not null, primary key, auto increment
+title            - varchar, legth(256), not null, charset(latin1_swedish_ci)
+uploadId_cover   - integet, legth(11), not null
+
+seletused:
+id               - primaar voti mis on unikaalneja identifitseerib yhe kirje
+title            - tiimi nimi
+uploadId_cover   - üleslaetud kaanefoto pildi unikaalne nimi `uploads` tabelist
+
 
 4.1.8 uploads:
+tabel `uploads` sisaldab endas faili unikaalset nime `uploads` kaustas ja
+faili laiendust
+
+id               - integet, legth(11), not null, primary key, auto increment
+name             - varchar, legth(256), not null, unique, charset(latin1_swedish_ci)
+ext              - varchar, legth(256), not null, charset(latin1_swedish_ci)
+
+seletused:
+id               - primaar voti mis on unikaalneja identifitseerib yhe kirje
+name             - faili unikaalne nimi `uploads` kaustas
+ext              - faili laiendus
+
 
 4.1.9 contacts:
 
