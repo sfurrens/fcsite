@@ -18,7 +18,7 @@ $info = get_info();
         <meta name="description" content="">
         <meta name="keywords" content="">
         <!-- CSS FILES -->
-        <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="<?php print($info['faviconPath']) ?>" rel="shortcut icon" type="image/x-icon" />
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
         <link href="css/animate.css" rel="stylesheet" type="text/css">
         <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -276,107 +276,11 @@ $info = get_info();
                 </section>
             </section>
             <!-- FOOTER -->
-            <footer id="footer">
-                <div id="footer-widgets">
-                    <!-- WIDGET 1 -->
-                    <div class="footer-widget first-clmn">
-                        <h5>Recent Posts</h5>
-                        <ul>
-                            <li>
-                                <a href="blog.html">Suspendisse ipsum urna</a>
-                            </li>
-                            <li>
-                                <a href="blog.html">Pellentesque eget por</a>
-                            </li>
-                            <li>
-                                <a href="blog.html">Aliquam sit amet urne</a>
-                            </li>
-                            <li>
-                                <a href="blog.html">Ornare dapibus ornare et</a>
-                            </li>
-                            <li>
-                                <a href="blog.html">Donec et odio et amet</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- WIDGET 2 -->
-                    <div class="footer-widget second-clmn">
-                        <h5>Categories</h5>
-                        <ul>
-                            <li>
-                                <a href="single-post.html">Lorem Ipsum Dolor eget por</a>
-                            </li>
-                            <li>
-                                <a href="single-post.html">Nibh Mauris lucem id sagit</a>
-                            </li>
-                            <li>
-                                <a href="single-post.html">Donec in lorem mauris</a>
-                            </li>
-                            <li>
-                                <a href="single-post.html">Auctor Mauris Dolor urna loe</a>
-                            </li>
-                            <li>
-                                <a href="single-post.html">Mauris id posuere</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- WIDGET 3 -->
-                    <div class="footer-widget third-clmn">
-                        <h5>Flickr Feed</h5>
-                        <!-- FLICKR WIDGET -->
-                        <ul id="cbox" class="flickr-box"></ul>
-                        <!-- END -->
-                    </div>
-                </div>
-                <div class="clear"></div>
-                <!-- CREDITS -->
-                <div class="credits">Copyright Egemenerd</div>
-                <!-- SOCIAL ICONS -->
-                <ul class="social-icons">
-                    <li>
-                        <a href="blog.html#">
-                            <img class="social-icon" src="images/social-icons/facebook.png" alt="Facebook" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog.html#">
-                            <img class="social-icon" src="images/social-icons/twitter.png" alt="Twitter" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog.html#">
-                            <img class="social-icon" src="images/social-icons/flickr.png" alt="Flickr" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog.html#">
-                            <img class="social-icon" src="images/social-icons/linkedin.png" alt="Linked in" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog.html#">
-                            <img class="social-icon" src="images/social-icons/google+.png" alt="Google+" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog.html#">
-                            <img class="social-icon" src="images/social-icons/vimeo.png" alt="Vimeo" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog.html#">
-                            <img class="social-icon" src="images/social-icons/youtube.png" alt="YouTube" />
-                        </a>
-                    </li>
-                </ul>
-            </footer>
-            <!-- BACK TO TOP BUTTON -->
-            <a href="blog.html#" class="back-to-top"></a>
+            <?php include('footer.php'); ?>
         </section>
         <!-- JS FILES -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/backstretch.js"></script>
-        <script type="text/javascript" src="js/jflickrfeed.min.js"></script>
         <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
         <!-- BG IMAGE -->
         <script type="text/javascript">
