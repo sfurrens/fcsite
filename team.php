@@ -4,6 +4,7 @@ include('sql/conn.php');
 
 $info = get_info();
 $teamInfo = get_teamInfo();
+$playerCategories = get_playerCategories();
 
 ?>
 
@@ -61,6 +62,29 @@ $teamInfo = get_teamInfo();
             <!-- PAGE CONTAINER -->
             <section class="pagecontainer using-grid">
                 <div class="grid">
+                    <?php
+                    
+                    foreach ($playerCategories as &$playerCategory) {
+                        $players = get_playerByCategory($playerCategory['id']);
+                        
+                        print('
+                            <div class="unit one-quarter teamlist">
+                                <h3>'.$playerCategory['name'].'</h3>
+                                <ul>
+                        ');
+                        
+                        foreach ($players as &$player) {
+                            print('
+                                <li></li>
+                            ');
+                        }
+                        
+                        print('
+                                </ul>
+                            </div>
+                        ');
+                    }
+                    ?>
                     <!-- GOOLKEEPERS -->
                     <div class="unit one-quarter teamlist">
                         <h3>Goolkeepers</h3>
