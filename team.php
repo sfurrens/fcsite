@@ -3,6 +3,8 @@
 include('sql/conn.php');
 
 $info = get_info();
+$teamInfo = get_teamInfo();
+$playerCategories = get_playerCategories();
 
 ?>
 
@@ -10,7 +12,7 @@ $info = get_info();
 <html lang="en">
     
     <head>
-        <title>Our Team</title>
+        <title>Team - <?php print(htmlspecialchars($info['title'])) ?></title>
         <!-- META TAGS -->
         <meta charset="utf-8">
         <meta name="viewport" content="user-scalable=0,width=device-width,height=device-height,initial-scale=1,maximum-scale=1" />
@@ -40,7 +42,7 @@ $info = get_info();
         <header id="header">
             <div class="logo">
                 <img src="<?php print($info['iconPath']) ?>" alt="" />
-                <span><?php print($info['title']) ?></span>
+                <span><?php print(htmlspecialchars($info['title'])) ?></span>
             </div>
         </header>
         <div class="clear"></div>
@@ -51,107 +53,38 @@ $info = get_info();
         <!-- MAIN CONTAINER -->
         <section class="maincontainer">
             <!-- PAGE TITLE -->
-            <div class="page-title">Our Team</div>
+            <div class="page-title"><?php print(htmlspecialchars($teamInfo['title'])); ?></div>
             <!-- FEATURED IMAGE -->
             <div class="page-img">
-                <img src="images/photos/squad.jpg" alt="" />
+                <?php print('<img src="'.$teamInfo['coverPath'].'" alt="Cover Image" />'); ?>
+                
             </div>
             <!-- PAGE CONTAINER -->
             <section class="pagecontainer using-grid">
                 <div class="grid">
-                    <!-- GOOLKEEPERS -->
-                    <div class="unit one-quarter teamlist">
-                        <h3>Goolkeepers</h3>
-                        <ul>
-                            <li>
-                                <a href="team.html#shelby" class="popup-with-zoom-anim">Shelby Firmin</a>
-                                <!-- POPUP BOX -->
-                                <div id="shelby" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player.jpg" alt="" />
-                                    <h3>1 - Shelby Firmin</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Albert Panfilo</li>
-                            <li>Sebastien Telesphore</li>
-                        </ul>
-                    </div>
-                    <!-- DEFENDERS -->
-                    <div class="unit one-quarter teamlist">
-                        <h3>Defenders</h3>
-                        <ul>
-                            <li>
-                                <a href="team.html#darell" class="popup-with-zoom-anim">Darell Teunis</a>
-                                <!-- POPUP BOX -->
-                                <div id="darell" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player2.jpg" alt="" />
-                                    <h3>4 - Darell Teunis</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Geoffrey Lonnie</li>
-                            <li>Otieno Martie</li>
-                            <li>Lincoln Garry</li>
-                            <li>Kevin Jakob</li>
-                            <li>Hein Bryce</li>
-                        </ul>
-                    </div>
-                    <!-- MIDFIELDERS -->
-                    <div class="unit one-quarter teamlist">
-                        <h3>Midfielders</h3>
-                        <ul>
-                            <li>Kolman Alden</li>
-                            <li>
-                                <a href="team.html#stephan" class="popup-with-zoom-anim">Stephan Michael</a>
-                                <!-- POPUP BOX -->
-                                <div id="stephan" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player.jpg" alt="" />
-                                    <h3>7 - Stephan Michael</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Arthur Max</li>
-                            <li>Tillo Denis</li>
-                            <li>
-                                <a href="team.html#plinio" class="popup-with-zoom-anim">Plinio Angelino</a>
-                                <!-- POPUP BOX -->
-                                <div id="plinio" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player2.jpg" alt="" />
-                                    <h3>7 - Plinio Angelino</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Armando Ed</li>
-                            <li>Timotheus Pancrazio</li>
-                            <li>Edgar Spike</li>
-                        </ul>
-                    </div>
-                    <!-- STRIKERS -->
-                    <div class="unit one-quarter teamlist">
-                        <h3>Strikers</h3>
-                        <ul>
-                            <li>
-                                <a href="team.html#anselmo" class="popup-with-zoom-anim">Anselmo Osvaldo</a>
-                                <!-- POPUP BOX -->
-                                <div id="anselmo" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player.jpg" alt="" />
-                                    <h3>9 - Anselmo Osvaldo</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Abe Gerolt</li>
-                            <li>
-                                <a href="team.html#darrel" class="popup-with-zoom-anim">Darrel Lelio</a>
-                                <!-- POPUP BOX -->
-                                <div id="darrel" class="teamlist-popup zoom-anim-dialog mfp-hide">
-                                    <img src="images/photos/player2.jpg" alt="" />
-                                    <h3>11 - Darrel Lelio</h3>
-                                    <p>Eram ex vidisse ita eiusmod quem legam expetendis nisi, ea elit ingeniis adipisicing, ita ingeniis reprehenderit, probant duis singulis, consequat id vidisse, ne elit domesticarum, quae sed pariatur. Duis de mentitum an amet, malis ita occaecat est magna. Senserit fugiat o incurreret fidelissimae, si quid reprehenderit.</p>
-                                </div>
-                            </li>
-                            <li>Buster Clarence</li>
-                        </ul>
-                    </div>
+                    <?php
+                    
+                    foreach ($playerCategories as &$playerCategory) {
+                        $players = get_playersByCategory($playerCategory['id']);
+                        
+                        print('
+                            <div class="unit one-quarter teamlist">
+                                <h3>'.$playerCategory['name'].'</h3>
+                                <ul>
+                        ');
+                        
+                        foreach ($players as &$player) {
+                            print('
+                                <li>'.$player['name'].'</li>
+                            ');
+                        }
+                        
+                        print('
+                                </ul>
+                            </div>
+                        ');
+                    }
+                    ?>
                 </div>
             </section>
             <div class="clear"></div>

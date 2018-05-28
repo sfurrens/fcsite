@@ -8,21 +8,9 @@
                 </a>
             </li>
             <li>
-                <a href="club.php">
-                    <span>About</span>
+                <a href="team.php">
+                    <span>Our Team</span>
                 </a>
-                <ul>
-                    <li>
-                        <a href="club.php">
-                            <span>Our Club</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="team.php">
-                            <span>Our Team</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li>
                 <a href="galleries.php">

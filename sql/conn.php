@@ -1,9 +1,9 @@
 <?php
 
-$_HOST_             = "sql313.hostfree.pw";
-$_DBUSER_           = "epree_22138974";
-$_DBPASS_           = "pingpong";
-$_DATABASE_         = "epree_22138974_fc";
+$_HOST_              = "sql313.hostfree.pw";
+$_DBUSER_            = "epree_22138974";
+$_DBPASS_            = "pingpong";
+$_DATABASE_          = "epree_22138974_fc";
 
 
 $_DB_NEWS_           = "news";
@@ -11,6 +11,9 @@ $_DB_INFO_           = "info";
 $_DB_UPLOADS_        = "uploads";
 $_DB_GALLERY_        = "gallery";
 $_DB_IMAGECATEGORY_  = "imageCategory";
+$_DB_TEAMINFO_       = "teamInfo";
+$_DB_PLAYERS_        = "players";
+$_DB_PLAYERCATEGORY_ = "playerCategory";
 
 $mysqli = new mysqli($_HOST_, $_DBUSER_, $_DBPASS_, $_DATABASE_);
 $mysqli->set_charset("utf8");
@@ -46,14 +49,12 @@ function get_info() {
     $res = $mysqli->query("select * from `".$_DB_INFO_."`;");
     
     // parse all rows
-    while ($r = $res->fetch_assoc()) {
-        $info = array(
-            "title" => $r['title'],
-            "iconPath" => $r['iconPath'],
-            "about" => $r['about']
-        );
-        break;
-    }
+    $r = $res->fetch_assoc();
+    $info = array(
+        "title" => $r['title'],
+        "iconPath" => $r['iconPath'],
+        "about" => $r['about']
+    );
     
     return $info;
 }
@@ -94,4 +95,60 @@ function get_imagesByCategory($categoryId) {
     return $images;
 }
 
+function get_teamInfo() {
+    global $mysqli, $_DB_TEAMINFO_, $_DB_UPLOADS_;
+    
+    $info = array();
+    
+    // get all data from news table
+    $res = $mysqli->query("select `title` from `".$_DB_TEAMINFO_."` where `id` = 1;");
+    $res2 = $mysqli->query("select `name`, `ext` from `".$_DB_UPLOADS_."` where `id` in (select `uploadId_cover` from `".$_DB_TEAMINFO_."` where `id` = 1);");
+    
+    // parse all rows
+    $r = $res->fetch_assoc();
+    $r2 = $res2->fetch_assoc();
+    
+    $info = array(
+        "title" => $r['title'],
+        "coverPath" => 'uploads/' . $r2['name'] . '.' . $r2['ext']
+    );
+    
+    return $info;
+}
+
+function get_playerCategories() {
+    global $mysqli, $_DB_PLAYERCATEGORY_;
+    
+    $categories = array();
+    
+    // get all data from news table
+    $res = $mysqli->query("select * from `".$_DB_PLAYERCATEGORY_."`;");
+    
+    while ($r = $res->fetch_assoc()) {
+        $category = array(
+            "id" => $r['id'],
+            "name" => $r['name']
+        );
+        array_push($categories, $category);
+    }
+    
+    return $categories;
+}
+
+function get_playersByCategory($category) {
+    global $mysqli, $_DB_PLAYERS_;
+    
+    $players = array();
+    
+    // get all data from news table
+    $res = $mysqli->query("select * from `".$_DB_PLAYERS_."` where `categoryId` = ".$category.";");
+    while ($r = $res->fetch_assoc()) {
+        $player = array(
+            "name" => $r['name']
+        );
+        array_push($players, $player);
+    }
+    
+    return $players;
+}
 ?>

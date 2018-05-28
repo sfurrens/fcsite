@@ -39,7 +39,7 @@ $info = get_info();
         <header id="header">
             <div class="logo">
                 <img src="<?php print($info['iconPath']) ?>" alt="" />
-                <span><?php print($info['title']) ?></span>
+                <span><?php print(htmlspecialchars($info['title'])) ?></span>
             </div>
         </header>
         <div class="clear"></div>
