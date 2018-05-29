@@ -11,7 +11,7 @@ $info = get_info();
 <html lang="en">
     
     <head>
-        <title>Blog - <?php print(htmlspecialchars($info['title'])) ?></title>
+        <title>Blogi - <?php print(htmlspecialchars($info['title'])) ?></title>
         <!-- META TAGS -->
         <meta charset="utf-8">
         <meta name="viewport" content="user-scalable=0,width=device-width,height=device-height,initial-scale=1,maximum-scale=1" />
@@ -51,75 +51,34 @@ $info = get_info();
         <!-- MAIN CONTAINER -->
         <section class="maincontainer">
             <!-- PAGE TITLE -->
-            <div class="page-title">Blog</div>
+            <div class="page-title">Blogi</div>
             <!-- PAGE CONTAINER -->
             <section class="pagecontainer">
                 <!-- LEFT CONTAINER -->
                 <section class="leftcontainer">
-                    <!-- POST -->
-                    <article class="post">
-                        <figure>
-                            <a href="single-post.html">
-                                <img src="images/photos/blog1.jpg" alt="" />
-                            </a>
-                            <figcaption>
-                                <h2>Post Title</h2>
-                                <div class="post-date">June,12 2014</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ipsum quis diam aliquam vel mollis nisi tempus. Nam et ante urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam luctus, mi vel tincidunt pulvinar, lectus urna vestibulum velit, et pharetra enim sapien eget orci. Mauris in porta neque. In hac habitasse platea dictumst.
-                            <a href="single-post.html">Read more...</a>
-                        </p>
-                    </article>
-                    <hr/>
-                    <!-- POST -->
-                    <article class="post">
-                        <figure>
-                            <a href="single-post.html">
-                                <img src="images/photos/blog2.jpg" alt="" />
-                            </a>
-                            <figcaption>
-                                <h2>Post Title</h2>
-                                <div class="post-date">June,08 2014</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ipsum quis diam aliquam vel mollis nisi tempus. Nam et ante urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam luctus, mi vel tincidunt pulvinar, lectus urna vestibulum velit, et pharetra enim sapien eget orci. Mauris in porta neque. In hac habitasse platea dictumst.
-                            <a href="single-post.html">Read more...</a>
-                        </p>
-                    </article>
-                    <hr/>
-                    <!-- POST -->
-                    <article class="post">
-                        <figure>
-                            <a href="single-post.html">
-                                <img src="images/photos/blog3.jpg" alt="" />
-                            </a>
-                            <figcaption>
-                                <h2>Post Title</h2>
-                                <div class="post-date">June,05 2014</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ipsum quis diam aliquam vel mollis nisi tempus. Nam et ante urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam luctus, mi vel tincidunt pulvinar, lectus urna vestibulum velit, et pharetra enim sapien eget orci. Mauris in porta neque. In hac habitasse platea dictumst.
-                            <a href="single-post.html">Read more...</a>
-                        </p>
-                    </article>
-                    <hr/>
-                    <!-- POST -->
-                    <article class="post">
-                        <figure>
-                            <a href="single-post.html">
-                                <img src="images/photos/blog4.jpg" alt="" />
-                            </a>
-                            <figcaption>
-                                <h2>Post Title</h2>
-                                <div class="post-date">June,01 2014</div>
-                            </figcaption>
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ipsum quis diam aliquam vel mollis nisi tempus. Nam et ante urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam luctus, mi vel tincidunt pulvinar, lectus urna vestibulum velit, et pharetra enim sapien eget orci. Mauris in porta neque. In hac habitasse platea dictumst.
-                            <a href="single-post.html">Read more...</a>
-                        </p>
-                    </article>
-                    <hr/>
+                    <?php
+
+                    foreach ($news as &$new) {
+                        print('
+                            <!-- POST -->
+                            <article class="post">
+                                <figure>
+                                    <a href="single-post.html">
+                                        <img src="'.$new['imagePath'].'" alt="" />
+                                    </a>
+                                    <figcaption>
+                                        <h2>'.$new['title'].'</h2>
+                                        <div class="post-date">'.$new['date'].'</div>
+                                    </figcaption>
+                                </figure>
+                                <p>'.$new['description'].'
+                                    <a href="single-post.html">Read more...</a>
+                                </p>
+                            </article>
+                            <hr/>
+                        ');
+                    }
+                    ?>
                     <!-- PAGER -->
                     <div class="blogpager">
                         <div class="previous">
@@ -132,146 +91,45 @@ $info = get_info();
                 </section>
                 <!-- RIGHT CONTAINER -->
                 <section class="rightcontainer">
-                    <!-- SIDEBAR BOX -->
-                    <div class="sidebarbox">
+                    <!-- SIDEBAR BOX (not implemented) -->
+                    <!-- div class="sidebarbox">
                         <h3>Search</h3>
                         <form id="searchform" class="searchbox">
                             <input type="text" id="search" class="field searchtext" placeholder="Keyword..." />
                             <input type="submit" class="button" name="submit" value="Go" />
                         </form>
-                    </div>
+                    </div -->
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
-                        <h3>Recent Posts</h3>
+                        <h3>Viimased Postitused</h3>
                         <ul class="sidebarlist">
-                            <li>
-                                <a href="single-post.html">Lorem Ipsum Dolor eget por</a>
-                            </li>
-                            <li>
-                                <a href="single-post.html">Nibh Mauris lucem id sagit</a>
-                            </li>
-                            <li>
-                                <a href="single-post.html">Donec in lorem mauris</a>
-                            </li>
-                            <li>
-                                <a href="single-post.html">Auctor Mauris Dolor urna loe</a>
-                            </li>
-                            <li>
-                                <a href="single-post.html">Mauris id posuere</a>
-                            </li>
+                             <?php
+
+                            foreach ($news as &$new) {
+                                print('
+                                    <li>
+                                        <a href="single-post.html">'.$new['title'].'</a>
+                                    </li>
+                                ');
+                            }
+                            ?>
                         </ul>
                     </div>
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
                         <div class="sidebarbox-title">
-                            <h3>Fixture</h3>
+                            <h3>Mängud</h3>
                         </div>
                         <!-- TABLE -->
                         <div class="fixture-row">
                             <a href="result.html">
-                                <div class="fixture-row-left">Consectetur FC
-                                    <div>?</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>?</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Fabulas FC
-                                    <div>1</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>3</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Voluptate Cillum FC
-                                    <div>4</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>1</div>Vidisse FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Elit FC
+                                <div class="fixture-row-left">JK Õismäe Torm
                                     <div>2</div>
                                 </div>
                                 <div class="fixture-row-right">
-                                    <div>4</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Voluptate Cillum FC
-                                    <div>1</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>1</div>Domesticarum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Ullamco FC
-                                    <div>6</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>1</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Incididunt FC
-                                    <div>1</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>5</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Voluptate Cillum FC
-                                    <div>2</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>1</div>Pariatur FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Voluptate Cillum FC
-                                    <div>1</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>3</div>Mentitum FC</div>
+                                    <div>4</div>Viimsi Lõvid</div>
                             </a>
                         </div>
-                    </div>
-                    <!-- SIDEBAR BOX -->
-                    <div class="sidebarbox">
-                        <div class="sidebarbox-title">
-                            <h3>Gallery</h3>
-                        </div>
-                        <!-- GALLERY -->
-                        <ul class="team-gallery">
-                            <li>
-                                <a class="clb-photo" href="images/photos/l1.jpg">
-                                    <img src="images/photos/s1.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-iframe" href="http://www.youtube.com/embed/1iIZeIy7TqM">
-                                    <img src="images/photos/t1.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-photo" href="images/photos/l2.jpg">
-                                    <img src="images/photos/s2.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-iframe" href="http://www.dailymotion.com/embed/video/x143vp2">
-                                    <img src="images/photos/t2.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-photo" href="images/photos/l3.jpg">
-                                    <img src="images/photos/s3.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-link" href="http://www.themeforest.com">
-                                    <img src="images/photos/t3.jpg" alt="" />
-                                </a>
-                            </li>
-                        </ul>
-                        <a href="galleries.html" class="button button-widget">View All</a>
                     </div>
                 </section>
             </section>

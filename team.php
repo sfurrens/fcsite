@@ -12,7 +12,7 @@ $playerCategories = get_playerCategories();
 <html lang="en">
     
     <head>
-        <title>Team - <?php print(htmlspecialchars($info['title'])) ?></title>
+        <title>Tiimist - <?php print(htmlspecialchars($info['title'])) ?></title>
         <!-- META TAGS -->
         <meta charset="utf-8">
         <meta name="viewport" content="user-scalable=0,width=device-width,height=device-height,initial-scale=1,maximum-scale=1" />

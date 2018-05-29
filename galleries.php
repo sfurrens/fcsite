@@ -11,7 +11,7 @@ $categories = get_imageCategories();
 <html lang="en">
     
     <head>
-        <title>Galleries</title>
+        <title>Galerii - <?php print(htmlspecialchars($info['title'])) ?></title>
         <!-- META TAGS -->
         <meta charset="utf-8">
         <meta name="viewport" content="user-scalable=0,width=device-width,height=device-height,initial-scale=1,maximum-scale=1" />
@@ -51,7 +51,7 @@ $categories = get_imageCategories();
         <!-- MAIN CONTAINER -->
         <section class="maincontainer">
             <!-- PAGE TITLE -->
-            <div class="page-title">Galleries</div>
+            <div class="page-title">Galerii</div>
             <!-- PAGE CONTAINER -->
             <section class="pagecontainer">
                 <!--vertical Tabs-->

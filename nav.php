@@ -3,13 +3,13 @@
     <nav id="submenu">
         <ul>
             <li>
-                <a href="index.php">Home</a>
+                <a href="index.php">Avaleht</a>
             </li>
             <li>
-                <a href="club.php">Our Club</a>
+                <a href="team.php">Tiimist</a>
             </li>
             <li>
-                <a href="galleries.php">Gallery</a>
+                <a href="galleries.php">Galerii</a>
             </li>
         </ul>
     </nav>
