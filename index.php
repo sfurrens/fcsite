@@ -76,7 +76,7 @@ $info = get_info();
             <div class="clear"></div>
             
             <!-- FIXTURE TITLE -->
-            <div class="scores-title">Upcoming Matches & Latest Results</div>
+            <div class="scores-title">Tulevased Matsid & Tulemused</div>
             <!-- FIXTURE SLIDER (not implemented right now) -->
             <!-- section class="transparent-bg">
                 <div id="fixture">
@@ -127,7 +127,7 @@ $info = get_info();
             <section class="pagecontainer">
                 <!-- LEFT CONTAINER -->
                 <section class="leftcontainer">
-                    <h1>Latest News</h1>
+                    <h1>Uudised</h1>
                     <hr/>
                     <?php
 
@@ -147,6 +147,7 @@ $info = get_info();
                                     <a href="single-post.html">Read more...</a>
                                 </p>
                             </article>
+                            <hr/>
                         ');
                     }
                     ?>
@@ -172,7 +173,7 @@ $info = get_info();
                     
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
-                        <h3>About Our Team</h3>
+                        <h3>Meie Tiimist</h3>
                         <p><?php print($info['about']) ?>
                             <a href="club.html">Read More...</a>
                         </p>
@@ -181,7 +182,7 @@ $info = get_info();
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
                         <div class="sidebarbox-title">
-                            <h3>Fixture</h3>
+                            <h3>Mängud</h3>
                         </div>
                         <!-- TABLE -->
                         <div class="fixture-row">

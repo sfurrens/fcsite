@@ -4,22 +4,22 @@
         <ul id="mainmenu">
             <li>
                 <a href="index.php">
-                    <span>Homepage</span>
+                    <span>Avaleht</span>
                 </a>
             </li>
             <li>
                 <a href="team.php">
-                    <span>Our Team</span>
+                    <span>Tiimist</span>
                 </a>
             </li>
             <li>
                 <a href="galleries.php">
-                    <span>Gallery</span>
+                    <span>Galerii</span>
                 </a>
             </li>
             <li>
                 <a href="blog.php">
-                    <span>Blog</span>
+                    <span>Blogi</span>
                 </a>
                 <ul>
                     <li>

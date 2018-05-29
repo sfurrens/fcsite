@@ -170,3 +170,28 @@ link             - sponsori kodulehe aadress
 uploadId_logo    - üleslaetud kaanefoto pildi unikaalne nimi `uploads` tabelist
 
 
+4.2 valmistamine
+Lehe jaotusel ja kujundamisel pidas autor silmas lihtsust ja kasutajasõbralikust,
+et oleks lehel näha ainult peamist informatsiooni samas mitte ylekuhjata infoga.
+samas autor proovis ettenäha edasiarendus võimalusi, et neid oleks voimalikult
+lihtne edasi arentada
+
+4.2.1 avalehe valmistamine:
+Avalehel on header ja footer mis ka igal teisel lehe, kuid eriliseks muudab
+avalehe blogilehest, et esimisena kuvatakse suurelt viimased tegevused karusellis.
+avalehel ka kiire informatsioon tiimi kohta ja mis matsid on olnud ja käivad.
+
+4.2.2 meie tiim
+Meie tiimi lehel näidatakase külastajale kaanefotot meie tiimist ja mängijaid
+kes mis positsioonil mängib, mis tulenevad andmebaasist ja saab lihtsalt 
+juurde lisada ja muuta
+
+4.2.3 galerii
+Galerii lehel autor soovis grupeerida pildid katekooriatesse ehk galeriidesse.
+Seega sai tehtud andmebaasi kategooria (imageCategory) ja piltide (gallery) tabelid,
+millest moodustakse krupeeritud pildi galerii milles saab kergelt pilti suurentada ja
+lehitseda
+
+4.2.4 blogi
+Blogi lehe jaotas autor 2`te ritta kus vasakul pool tulevad uudised andmebaasist 
+`news` tabelist ja paremal pool kiirvalikud mis praeguseseisuga kõige uuemad
