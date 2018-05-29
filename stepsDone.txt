@@ -43,6 +43,12 @@ kanban`i ettapid seadis autor järgevad:
   arhiveeritud (ARCHIVED) - kus ülesanneded on täielikult kinnitatud järmine päev
   
 
+3.3 Kasutatavad tehnoloogiad
+Rakenduse on autor arendanud kasutades PHP skriptimiskeelt serveriga suhtlemiseks. 
+HTML5, CSS3 ja JavaScripti veebilehe loomiseks. Andmebaasiks on kasutusel avatud lähtekoodiga MySQL.
+versiooni haldamiseks on autor kasutanud git versiooni haldus tarkvara ja
+taiga.io projecti haldus keskonda
+
 4.1 andmebaaside tabelite loomine:
 info näitamiseks, lisamiseks ja muutmiseks lõi autor 9 tabelit millets seotud on kategooria
 põhilised tabelid, igale tabelile on antud `id`(identifikatsioon) mis hõlpsustab
