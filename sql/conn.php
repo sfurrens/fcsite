@@ -29,16 +29,16 @@ function searchById($id, $array) {
    return null;
 }
 
-function get_news() {
+function get_news($offset, $limit) {
     global $mysqli, $_DB_NEWS_, $_DB_UPLOADS_;
     
     $news = array();
     $uploadedImages = array();
     
     // get all data from news table
-    $res = $mysqli->query("select * from `".$_DB_NEWS_."`;");
+    $res = $mysqli->query("select * from `".$_DB_NEWS_."` limit ".$limit." offset ".$offset.";");
     
-    $res2 = $mysqli->query("select `name`, `ext` from `".$_DB_UPLOADS_."` where `id` in (select `uploadId_image` from `".$_DB_NEWS_."`);");
+    $res2 = $mysqli->query("select `up`.`name`, `up`.`ext` from `".$_DB_UPLOADS_."` up, (select `uploadId_image` from `".$_DB_NEWS_."` limit ".$limit." offset ".$offset.") ne where `up`.`id` = `ne`.`uploadId_image`;");
     
     // parse uploaded images
     while ($r2 = $res2->fetch_assoc()) {

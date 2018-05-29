@@ -2,7 +2,7 @@
 
 include('sql/conn.php');
 
-$news = get_news();
+$news = get_news(0, 5);
 $info = get_info();
 
 ?>

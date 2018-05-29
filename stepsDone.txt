@@ -16,8 +16,6 @@ mis on kerge kaaluline kohandatav lightbox plugin jquery`le
 blogi lehel on viimati lisatud postitused mis yritused on hiljuti labitud voi on tulemas.
 iga postituse peale saa klikata mis toob esile rohkem infot (teksti ja pilte).
 
-3.1.5 kontakt (COTACT):
-
 
 3.2 kasutatav arendus mudel:
 veebilehe arendamisel on autor kasutanud kanban arendusmudelit. kanban sobis
@@ -156,7 +154,19 @@ name             - faili unikaalne nimi `uploads` kaustas
 ext              - faili laiendus
 
 
-4.1.9 contacts:
+4.1.9 sponsors:
+tabel `sponsors` sisaldab endas sponsori nime, linki ja logo mida
+näidatakse igal lehel
 
+id               - integet, legth(11), not null, primary key, auto increment
+name             - varchar, legth(256), not null, unique, charset(latin1_swedish_ci)
+link             - varchar, legth(256), not null, unique, charset(latin1_swedish_ci)
+uploadId_logo    - integet, legth(11), not null
+
+seletused:
+id               - primaar voti mis on unikaalneja identifitseerib yhe kirje
+name             - sponsori nimi
+link             - sponsori kodulehe aadress
+uploadId_logo    - üleslaetud kaanefoto pildi unikaalne nimi `uploads` tabelist
 
 
