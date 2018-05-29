@@ -14,6 +14,7 @@ $_DB_IMAGECATEGORY_  = "imageCategory";
 $_DB_TEAMINFO_       = "teamInfo";
 $_DB_PLAYERS_        = "players";
 $_DB_PLAYERCATEGORY_ = "playerCategory";
+$_DB_SPONSORS_       = "sponsors";
 
 $mysqli = new mysqli($_HOST_, $_DBUSER_, $_DBPASS_, $_DATABASE_);
 $mysqli->set_charset("utf8");
@@ -55,7 +56,8 @@ function get_info() {
         "iconPath" => $r['iconPath'],
         "faviconPath" => $r['faviconPath'],
         "about" => $r['about'],
-        "copyright" => $r['copyright']
+        "copyright" => $r['copyright'],
+        "enable_sponsors" => $r['enable_sponsors']
     );
     
     return $info;
@@ -126,6 +128,7 @@ function get_playerCategories() {
     // get all data from news table
     $res = $mysqli->query("select * from `".$_DB_PLAYERCATEGORY_."`;");
     
+    // parse rows
     while ($r = $res->fetch_assoc()) {
         $category = array(
             "id" => $r['id'],
@@ -144,6 +147,8 @@ function get_playersByCategory($category) {
     
     // get all data from news table
     $res = $mysqli->query("select * from `".$_DB_PLAYERS_."` where `categoryId` = ".$category.";");
+    
+    // parse rows
     while ($r = $res->fetch_assoc()) {
         $player = array(
             "name" => $r['name']
@@ -152,5 +157,15 @@ function get_playersByCategory($category) {
     }
     
     return $players;
+}
+
+function get_sponsors() {
+    global $mysqli, $_DB_SPONSORS_;
+    
+    $sponsors = array();
+    
+    // get all data from news table
+    $res = $mysqli->query("select * from `".$_DB_PLAYERS_."` where `categoryId` = ".$category.";");
+    
 }
 ?>
