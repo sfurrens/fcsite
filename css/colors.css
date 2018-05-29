@@ -37,12 +37,12 @@ MEDIA
 ::-moz-selection {
 	color:#fff;
 	text-shadow:none;
-	background:#cc0000;
+	background:#00519b;
 }
 ::selection {
 	color:#fff;
 	text-shadow:none;
-	background:#cc0000;
+	background:#00519b;
 }
 body{
     color:#616161;
@@ -54,14 +54,14 @@ p {
     color:#616161;
 }
 a {
-	color: #cc0000;
+	color: #00519b;
 }
 hr {
     background-color:#e1e1e1;
     background: -webkit-linear-gradient(left, #000, #000 30%, #e1e1e1 30%, #e1e1e1);
 }
 blockquote {
-    border-left:3px solid #cc0000;
+    border-left:3px solid #00519b;
     color:#fff;
     background-color:#000;
 }
@@ -73,7 +73,7 @@ blockquote {
     background-color:#000;
 }
 .flex-direction-nav li a:hover {
-    background-color: #cc0000;
+    background-color: #00519b;
 }
 .flex-title {
 	background-color:rgba(0,0,0,0.8);
@@ -113,7 +113,7 @@ blockquote {
     color:#000;
 }
 #submenu a:hover{
-    color: #cc0000;
+    color: #00519b;
 }
 #submenu-login {
     background:#fff;
@@ -123,7 +123,7 @@ blockquote {
     color:#000;
 }
 #submenu-login a:hover{
-    color: #cc0000;
+    color: #00519b;
 }
 /* ================= HEADER  ================== */
 #header {
@@ -131,11 +131,11 @@ blockquote {
 }
 #header .logo span{
     color:#fff;
-    background-color: #cc0000;
+    background-color: #00519b;
 }
 #header .logo span:after {
-	border-top-color: #cc0000;
-    border-right-color: #cc0000;
+	border-top-color: #00519b;
+    border-right-color: #00519b;
 }
 /* ================= MAIN MENU  ================== */
 #mainmenu-container {
@@ -144,24 +144,24 @@ blockquote {
 .toggleMenu {
     background: #000;
     color: #fff !important;
-    border-bottom:3px solid #cc0000;
+    border-bottom:3px solid #00519b;
 }
 #mainmenu {
     background:#000;
-    border-bottom:3px solid #cc0000;
+    border-bottom:3px solid #00519b;
 }
 #mainmenu a {
     color:#fff;
     background-color: #000;
 }
 #mainmenu a::before{
-    background:#cc0000;
+    background:#00519b;
 }
 #mainmenu ul li a {
     background-color: #000;
 }
 #mainmenu ul li a::before{
-    background:#cc0000;
+    background:#00519b;
 }
 #mainmenu li li a {
     background:#000;
@@ -177,17 +177,17 @@ blockquote {
 	background: #000;
 }
 .ytv-canvas ::-webkit-scrollbar-thumb{
-	background: #cc0000;
+	background: #00519b;
 }
 .ytv-list .ytv-active a{
-    color:#cc0000;
+    color:#00519b;
 }
 .ytv-list a{
     color: #fff;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 .ytv-list a:hover{
-	color: #cc0000;
+	color: #00519b;
 }
 .ytv-list .ytv-thumb span{
 	color: #fff;
@@ -209,14 +209,14 @@ blockquote {
     color:#fff;
 }
 .match-results .score{
-    background-color: #cc0000;
+    background-color: #00519b;
 }
 .match-place span{
     background-color: #000;
     color:#fff;
 }
 .match-place .red{
-    background-color: #cc0000;
+    background-color: #00519b;
 }
 .match-place span a{
     color:#fff;
@@ -250,11 +250,11 @@ blockquote {
 .fixresult-title {
     background-color: #000;
     color: #fff;
-    border-top:3px solid #cc0000;
+    border-top:3px solid #00519b;
 }
 /* ================= BLOG ================== */
 .post figcaption {
-	background-color: #cc0000;
+	background-color: #00519b;
 	color: #fff;
 }
 .post figcaption h2 {
@@ -270,7 +270,7 @@ blockquote {
     color:#616161;
 }
 .sidebarlist li a:hover {
-    color:#cc0000;
+    color:#00519b;
 }
 /* ================= COMMENTS ================== */
 .comments_content{
@@ -306,7 +306,7 @@ input:focus, textarea:focus {
 	background-color:#000;
 }
 .button:hover {
-	background-color:#cc0000;
+	background-color:#00519b;
 }
 /* ================= TABLES ================== */
 .sidebarbox-title h3 {
@@ -338,13 +338,13 @@ input:focus, textarea:focus {
     background-color:#616161;
 }
 .filters li a.active {
-    background-color:#cc0000;
+    background-color:#00519b;
 }
 .filters {
     background-color:#000;
 }
 .team-gallery li a {
-    background-color: #cc0000;
+    background-color: #00519b;
 }
 /* ================= OUR TEAM ================== */
 .teamlist ul li {
@@ -357,7 +357,7 @@ input:focus, textarea:focus {
     color: #616161;
 }
 .teamlist ul li a:hover {
-    color:#cc0000;
+    color:#00519b;
 }
 .teamlist-popup {
     background: #fff;
@@ -373,13 +373,13 @@ input:focus, textarea:focus {
 /* ================= INFO BOXES ================== */
  .message {
     background-image: linear-gradient(135deg, rgba(255, 255, 255, .10) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .10) 50%, rgba(255, 255, 255, .10) 75%, transparent 75%, transparent);
-    border-bottom: 3px solid #cc0000;
+    border-bottom: 3px solid #00519b;
 }
 .black {
     background-color: #000;
 }
 .red {
-    background-color: #cc0000;
+    background-color: #00519b;
     border-bottom-color:#000;
 }
 .message h5 {
@@ -391,7 +391,7 @@ input:focus, textarea:focus {
 /* ================= FOOTER ================== */
 #footer {
     background-color:#000;
-    border-top:3px solid #cc0000;
+    border-top:3px solid #00519b;
     color:#fff;
 }
 #footer h5 {
@@ -427,14 +427,14 @@ input:focus, textarea:focus {
     background-color:#000;
 }
 .social-icon:hover {
-    background-color:#cc0000;
+    background-color:#00519b;
 }
 /* ================= BACK TO TOP BUTTON ================== */
 .back-to-top {
     background-color: #000;
 }
 .back-to-top:hover {
-    background-color: #cc0000;
+    background-color: #00519b;
 }
 /* ================= COLORBOX ================== */
 #cboxOverlay{
@@ -502,7 +502,7 @@ input:focus, textarea:focus {
 }
 /* ================= TABS ================== */
 ul.resp-tabs-list {
-    border-bottom: 3px solid #cc0000;
+    border-bottom: 3px solid #00519b;
     background-color: #e1e1e1;
 }
 .resp-tabs-list li {
@@ -524,7 +524,7 @@ ul.resp-tabs-list {
 }
 /*-----------Vertical tabs-----------*/
  .resp-vtabs ul.resp-tabs-list {
-    border-right: 3px solid #cc0000;
+    border-right: 3px solid #00519b;
 }
 .resp-vtabs .resp-tabs-container {
     background-color: #fff;
@@ -539,7 +539,7 @@ ul.resp-tabs-list {
         background-color: #e1e1e1;
     }
     h2.resp-tab-active {
-        background-color: #cc0000;
+        background-color: #00519b;
         color:#fff;
     }
     h2.resp-accordion:hover {
