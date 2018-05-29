@@ -34,11 +34,6 @@
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="contact.php">
-                    <span>Contact</span>
-                </a>
-            </li>
         </ul>
     </nav>
 </section>

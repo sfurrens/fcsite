@@ -294,37 +294,8 @@ $info = get_info();
             </section>
             <div class="clear"></div>
             <!-- SPONSORS TITLE -->
-            <div class="logos-title">Sponsors</div>
-            <!-- SPONSORS SLIDER -->
-            <section class="transparent-bg">
-                <div id="logos">
-                    <div class="slide">
-                        <a href="index.html#">
-                            <img src="images/photos/themeforest.png" alt="" />
-                        </a>
-                    </div>
-                    <div class="slide">
-                        <a href="index.html#">
-                            <img src="images/photos/codecanyon.png" alt="" />
-                        </a>
-                    </div>
-                    <div class="slide">
-                        <a href="index.html#">
-                            <img src="images/photos/photodune.png" alt="" />
-                        </a>
-                    </div>
-                    <div class="slide">
-                        <a href="index.html#">
-                            <img src="images/photos/activeden.png" alt="" />
-                        </a>
-                    </div>
-                    <div class="slide">
-                        <a href="index.html#">
-                            <img src="images/photos/audiojungle.png" alt="" />
-                        </a>
-                    </div>
-                </div>
-            </section>
+            <?php include('sponsors.php'); ?>
+            
             <!-- FOOTER -->
             <?php include('footer.php'); ?>
         </section>
