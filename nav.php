@@ -11,9 +11,6 @@
             <li>
                 <a href="galleries.php">Gallery</a>
             </li>
-            <li>
-                <a href="contact.php">Contact</a>
-            </li>
         </ul>
     </nav>
     <!-- LOGIN MENU (not implemented yet) -->

@@ -19,13 +19,35 @@ $_DB_SPONSORS_       = "sponsors";
 $mysqli = new mysqli($_HOST_, $_DBUSER_, $_DBPASS_, $_DATABASE_);
 $mysqli->set_charset("utf8");
 
+
+function searchById($id, $array) {
+   foreach ($array as &$arr) {
+       if ($arr['id'] == $id) {
+           return $arr;
+       }
+   }
+   return null;
+}
+
 function get_news() {
-    global $mysqli, $_DB_NEWS_;
+    global $mysqli, $_DB_NEWS_, $_DB_UPLOADS_;
     
     $news = array();
+    $uploadedImages = array();
     
     // get all data from news table
     $res = $mysqli->query("select * from `".$_DB_NEWS_."`;");
+    
+    $res2 = $mysqli->query("select `name`, `ext` from `".$_DB_UPLOADS_."` where `id` in (select `uploadId_image` from `".$_DB_NEWS_."`);");
+    
+    // parse uploaded images
+    while ($r2 = $res2->fetch_assoc()) {
+        $upload = array(
+            "id" => $r2['id'],
+            "imagePath" => 'uploads/' . $r2['name'] . '.' . $r2['ext']
+        );
+        array_push($uploadedImages, $upload);
+    }
     
     // parse all rows
     while ($r = $res->fetch_assoc()) {
@@ -33,7 +55,7 @@ function get_news() {
             "title" => $r['title'],
             "description" => $r['description'],
             "date" => $r['date'],
-            "imagePath" => $r['imagePath']
+            "imagePath" => searchById($r['uploadId_logo'], $uploadedImages)['imagePath']
         );
         array_push($news, $new);
     }
@@ -160,12 +182,36 @@ function get_playersByCategory($category) {
 }
 
 function get_sponsors() {
-    global $mysqli, $_DB_SPONSORS_;
+    global $mysqli, $_DB_SPONSORS_, $_DB_UPLOADS_;
     
     $sponsors = array();
+    $uploadedImages = array();
     
     // get all data from news table
-    $res = $mysqli->query("select * from `".$_DB_PLAYERS_."` where `categoryId` = ".$category.";");
+    $res = $mysqli->query("select * from `".$_DB_SPONSORS_."`;");
     
+    $res2 = $mysqli->query("select * from `".$_DB_UPLOADS_."` where `id` in (select `uploadId_logo` from `".$_DB_SPONSORS_."`);");
+    
+    
+    // parse uploaded images
+    while ($r2 = $res2->fetch_assoc()) {
+        $upload = array(
+            "id" => $r2['id'],
+            "imagePath" => 'uploads/' . $r2['name'] . '.' . $r2['ext']
+        );
+        array_push($uploadedImages, $upload);
+    }
+    
+    // parse rows
+    while ($r = $res->fetch_assoc()) {
+        $sponsor = array(
+            "name" => $r['name'],
+            "link" => $r['link'],
+            "imagePath" => searchById($r['uploadId_logo'], $uploadedImages)['imagePath']
+        );
+        array_push($sponsors, $sponsor);
+    }
+    
+    return $sponsors;
 }
 ?>
