@@ -16,8 +16,6 @@ mis on kerge kaaluline kohandatav lightbox plugin jquery`le
 blogi lehel on viimati lisatud postitused mis yritused on hiljuti labitud voi on tulemas.
 iga postituse peale saa klikata mis toob esile rohkem infot (teksti ja pilte).
 
-3.1.5 kontakt (COTACT):
-
 
 3.2 kasutatav arendus mudel:
 veebilehe arendamisel on autor kasutanud kanban arendusmudelit. kanban sobis
