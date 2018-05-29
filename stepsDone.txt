@@ -1,3 +1,18 @@
+sissejuhatus:
+Tänapäeval on igal endast lugupidaval spordivõistkonnal vaja enda veebilehte, 
+mis kajastaks tiimi tegemisi ning omaks ka teavet nende mängijate ning mängude kohta. 
+Viimsi Lõvidel hetkel veebileht puudub ning minu lõputöö eesmärgiks oleks see puudus 
+lahendada ning anda neile moodne, funktsioneeriv ning kasutajasõbralik veebileht.
+
+
+
+3 lahendatav probleem
+uudisted, pildid ja tegemised spordivõistkonnast tuleb salvestada ja esile tuua,
+selle jaoks tuleb luua leht mis näitav koheselt peamist infot. Edasi informatsiooni
+leidmiseks on vaja menüü ja kategooriad menüüribale jaotada. et hõlpsustada andmeta
+manageerimist tuleb selleks luua andmebaas ning moodul mis ühendab disaini ja 
+andmebaasist saadav informatsioon
+
 3.1.1 avalehe loomine:
 avaleht ehk indeks leht peakb andma lehe kylastajale koheselt ylevaate
 mis fc timmiga tegemist, mis matsid on peetud ja veel pidada, seega esilehele on
