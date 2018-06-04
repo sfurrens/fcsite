@@ -63,7 +63,7 @@ $info = get_info();
                             <!-- POST -->
                             <article class="post">
                                 <figure>
-                                    <a href="single-post.html">
+                                    <a href="#">
                                         <img src="'.$new['imagePath'].'" alt="" />
                                     </a>
                                     <figcaption>
@@ -72,7 +72,7 @@ $info = get_info();
                                     </figcaption>
                                 </figure>
                                 <p>'.$new['description'].'
-                                    <a href="single-post.html">Read more...</a>
+                                    <!--a href="single-post.php">Read more...</a-->
                                 </p>
                             </article>
                             <hr/>
