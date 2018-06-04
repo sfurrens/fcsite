@@ -152,7 +152,6 @@ $categories = get_imageCategories();
                         ');
                     }
                     ?>
-                    <hr/>
                     <!-- VIEW ALL BUTTON -->
                     <div class="blogpager">
                         <div class="previous">
