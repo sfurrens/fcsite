@@ -21,18 +21,6 @@
                 <a href="blog.php">
                     <span>Blogi</span>
                 </a>
-                <ul>
-                    <li>
-                        <a href="blog.php">
-                            <span>Blog</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="single-post.php">
-                            <span>Single Post</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
         </ul>
     </nav>

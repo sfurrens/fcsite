@@ -1,3 +1,18 @@
+sissejuhatus:
+Tänapäeval on igal endast lugupidaval spordivõistkonnal vaja enda veebilehte, 
+mis kajastaks tiimi tegemisi ning omaks ka teavet nende mängijate ning mängude kohta. 
+Viimsi Lõvidel hetkel veebileht puudub ning minu lõputöö eesmärgiks oleks see puudus 
+lahendada ning anda neile moodne, funktsioneeriv ning kasutajasõbralik veebileht.
+
+
+
+3 lahendatav probleem
+uudisted, pildid ja tegemised spordivõistkonnast tuleb salvestada ja esile tuua,
+selle jaoks tuleb luua leht mis näitav koheselt peamist infot. Edasi informatsiooni
+leidmiseks on vaja menüü ja kategooriad menüüribale jaotada. et hõlpsustada andmeta
+manageerimist tuleb selleks luua andmebaas ning moodul mis ühendab disaini ja 
+andmebaasist saadav informatsioon
+
 3.1.1 avalehe loomine:
 avaleht ehk indeks leht peakb andma lehe kylastajale koheselt ylevaate
 mis fc timmiga tegemist, mis matsid on peetud ja veel pidada, seega esilehele on
@@ -27,6 +42,12 @@ kanban`i ettapid seadis autor järgevad:
   tehtud (DONE)           - kus ülesanneded on valmis ja testitud käsitsi
   arhiveeritud (ARCHIVED) - kus ülesanneded on täielikult kinnitatud järmine päev
   
+
+3.3 Kasutatavad tehnoloogiad
+Rakenduse on autor arendanud kasutades PHP skriptimiskeelt serveriga suhtlemiseks. 
+HTML5, CSS3 ja JavaScripti veebilehe loomiseks. Andmebaasiks on kasutusel avatud lähtekoodiga MySQL.
+versiooni haldamiseks on autor kasutanud git versiooni haldus tarkvara ja
+taiga.io projecti haldus keskonda
 
 4.1 andmebaaside tabelite loomine:
 info näitamiseks, lisamiseks ja muutmiseks lõi autor 9 tabelit millets seotud on kategooria
