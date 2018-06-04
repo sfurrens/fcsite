@@ -15,6 +15,7 @@ $_DB_TEAMINFO_       = "teamInfo";
 $_DB_PLAYERS_        = "players";
 $_DB_PLAYERCATEGORY_ = "playerCategory";
 $_DB_SPONSORS_       = "sponsors";
+$_DB_FIXTURE_        = "fixture";
 
 $mysqli = new mysqli($_HOST_, $_DBUSER_, $_DBPASS_, $_DATABASE_);
 $mysqli->set_charset("utf8");
@@ -213,5 +214,28 @@ function get_sponsors() {
     }
     
     return $sponsors;
+}
+
+
+function get_fixtures($offset, $limit) {
+    global $mysqli, $_DB_FIXTURE_;
+    
+    $fixtures = array();
+    
+    // get all data from news table
+    $res = $mysqli->query("select * from `".$_DB_FIXTURE_."` limit ".$limit." offset ".$offset.";");
+    
+    // parse rows
+    while ($r = $res->fetch_assoc()) {
+        $fixture = array(
+            "leftName" => $r['leftName'],
+            "leftScore" => $r['leftScore'],
+            "rightName" => $r['rightName'],
+            "rightScore" => $r['rightScore']
+        );
+        array_push($fixtures, $fixture);
+    }
+    
+    return $fixtures;
 }
 ?>

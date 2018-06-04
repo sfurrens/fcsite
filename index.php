@@ -4,6 +4,7 @@ include('sql/conn.php');
 
 $news = get_news(0, 5);
 $info = get_info();
+$categories = get_imageCategories();
 
 ?>
 
@@ -180,77 +181,8 @@ $info = get_info();
                     </div>
                     
                     <!-- SIDEBAR BOX -->
-                    <div class="sidebarbox">
-                        <div class="sidebarbox-title">
-                            <h3>Mängud</h3>
-                        </div>
-                        <!-- TABLE -->
-                        <div class="fixture-row">
-                            <a href="result.html">
-                                <div class="fixture-row-left">Consectetur FC
-                                    <div>?</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>?</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Fabulas FC
-                                    <div>1</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>3</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Voluptate Cillum FC
-                                    <div>4</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>1</div>Vidisse FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Elit FC
-                                    <div>2</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>4</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Voluptate Cillum FC
-                                    <div>1</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>1</div>Domesticarum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Ullamco FC
-                                    <div>6</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>1</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Incididunt FC
-                                    <div>1</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>5</div>Voluptate Cillum FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Voluptate Cillum FC
-                                    <div>2</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>1</div>Pariatur FC</div>
-                            </a>
-                            <a href="result.html">
-                                <div class="fixture-row-left">Voluptate Cillum FC
-                                    <div>1</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>3</div>Mentitum FC</div>
-                            </a>
-                        </div>
-                    </div>
+                    <?php include('fixture.php'); ?>
+                    
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
                         <div class="sidebarbox-title">
@@ -258,38 +190,24 @@ $info = get_info();
                         </div>
                         <!-- GALLERY -->
                         <ul class="team-gallery">
-                            <li>
-                                <a class="clb-photo" href="images/photos/l1.jpg">
-                                    <img src="images/photos/s1.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-iframe" href="http://www.youtube.com/embed/1iIZeIy7TqM">
-                                    <img src="images/photos/t1.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-photo" href="images/photos/l2.jpg">
-                                    <img src="images/photos/s2.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-iframe" href="http://www.dailymotion.com/embed/video/x143vp2">
-                                    <img src="images/photos/t2.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-photo" href="images/photos/l3.jpg">
-                                    <img src="images/photos/s3.jpg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clb-link" href="http://www.themeforest.com">
-                                    <img src="images/photos/t3.jpg" alt="" />
-                                </a>
-                            </li>
+                            <?php
+                            
+                            $category = $categories[count($categories) -1];
+                            $images = get_imagesByCategory($category['id']);
+                            
+                            foreach ($images as &$image) {
+                                print('
+                                   <li>
+                                        <a class="clb-photo" href="'.$image.'" data-rel="photo">
+                                            <img src="'.$image.'" alt="" />
+                                        </a>
+                                    </li>
+                                ');
+                            }
+                            
+                            ?>
                         </ul>
-                        <a href="galleries.html" class="button button-widget">View All</a>
+                        <a href="galleries.php" class="button button-widget">View All</a>
                     </div>
                 </section>
             </section>

@@ -103,7 +103,7 @@ $info = get_info();
                     <div class="sidebarbox">
                         <h3>Viimased Postitused</h3>
                         <ul class="sidebarlist">
-                             <?php
+                            <?php
 
                             foreach ($news as &$new) {
                                 print('
@@ -116,21 +116,7 @@ $info = get_info();
                         </ul>
                     </div>
                     <!-- SIDEBAR BOX -->
-                    <div class="sidebarbox">
-                        <div class="sidebarbox-title">
-                            <h3>Mängud</h3>
-                        </div>
-                        <!-- TABLE -->
-                        <div class="fixture-row">
-                            <a href="result.html">
-                                <div class="fixture-row-left">JK Õismäe Torm
-                                    <div>2</div>
-                                </div>
-                                <div class="fixture-row-right">
-                                    <div>4</div>Viimsi Lõvid</div>
-                            </a>
-                        </div>
-                    </div>
+                    <?php include('fixture.php'); ?>
                 </section>
             </section>
             <!-- FOOTER -->
