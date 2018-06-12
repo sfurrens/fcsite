@@ -4,7 +4,7 @@ $sponsors = get_sponsors();
 
 ?>
 
-<div class="logos-title">Sponsors</div>
+<div class="logos-title">Sponsorid</div>
 <!-- SPONSORS SLIDER -->
 <section class="transparent-bg">
     <div id="logos">
