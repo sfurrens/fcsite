@@ -9,8 +9,7 @@ $categories = get_imageCategories();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-    
+<html lang="et">
     <head>
         <title><?php print($info['title']) ?></title>
         <!-- META TAGS -->
@@ -78,51 +77,6 @@ $categories = get_imageCategories();
             
             <!-- FIXTURE TITLE -->
             <div class="scores-title">Tulevased Matsid & Tulemused</div>
-            <!-- FIXTURE SLIDER (not implemented right now) -->
-            <!-- section class="transparent-bg">
-                <div id="fixture">
-                    <div class="slide-content">
-                        <div class="match-results">
-                            <span>Voluptate Cillum FC</span>
-                            <span class="score">? - ?</span>
-                            <span>Deserunt Quorum FC</span>
-                        </div>
-                        <div class="match-place">
-                            <span>11th Mar 2014 - 10:00 PM at Quamquam Stadium</span>
-                            <span class="red">
-                                <a href="fixtures.html">Buy Ticket</a>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="slide-content">
-                        <div class="match-results">
-                            <span>Deserunt Quorum FC</span>
-                            <span class="score">2 - 1</span>
-                            <span>Voluptate Cillum FC</span>
-                        </div>
-                        <div class="match-place">
-                            <span>07th Mar 2014 - 11:00 PM at Suspendisse Stadium</span>
-                            <span class="red">
-                                <a href="result.html">Report</a>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="slide-content">
-                        <div class="match-results">
-                            <span>Voluptate Cillum FC</span>
-                            <span class="score">1 - 3</span>
-                            <span>Deserunt Quorum FC</span>
-                        </div>
-                        <div class="match-place">
-                            <span>03th Mar 2014 - 09:00 PM at Quamquam Stadium</span>
-                            <span class="red">
-                                <a href="result.html">Report</a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </section -->
             
             <!-- PAGE CONTAINER -->
             <section class="pagecontainer">
@@ -136,7 +90,7 @@ $categories = get_imageCategories();
                         print('
                             <article class="post">
                                 <figure>
-                                    <a href="single-post.html">
+                                    <a href="#">
                                         <img src="'.$new['imagePath'].'" alt="" />
                                     </a>
                                     <figcaption>
@@ -144,9 +98,7 @@ $categories = get_imageCategories();
                                         <div class="post-date">'.$new['date'].'</div>
                                     </figcaption>
                                 </figure>
-                                <p>'.$new['description'].'
-                                    <a href="single-post.html">Read more...</a>
-                                </p>
+                                <p>'.$new['description'].'</p>
                             </article>
                             <hr/>
                         ');
@@ -155,22 +107,13 @@ $categories = get_imageCategories();
                     <!-- VIEW ALL BUTTON -->
                     <div class="blogpager">
                         <div class="previous">
-                            <a href="blog.html" class="button next-prev">View All</a>
+                            <a href="blog.php" class="button next-prev">Vaata Kõiki</a>
                         </div>
                     </div>
                 </section>
                 
                 <!-- RIGHT CONTAINER -->
                 <section class="rightcontainer">
-                    <!-- SIDEBAR BOX (search not implemented yet) -->
-                    <!-- div class="sidebarbox">
-                        <h3>Search</h3>
-                        <form id="searchform" class="searchbox">
-                            <input type="text" id="search" class="field searchtext" placeholder="Keyword..." />
-                            <input type="submit" class="button" name="submit" value="Go" />
-                        </form>
-                    </div -->
-                    
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
                         <h3>Meie Tiimist</h3>
@@ -185,7 +128,7 @@ $categories = get_imageCategories();
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
                         <div class="sidebarbox-title">
-                            <h3>Gallery</h3>
+                            <h3>Galerii</h3>
                         </div>
                         <!-- GALLERY -->
                         <ul class="team-gallery">
@@ -206,7 +149,7 @@ $categories = get_imageCategories();
                             
                             ?>
                         </ul>
-                        <a href="galleries.php" class="button button-widget">View All</a>
+                        <a href="galleries.php" class="button button-widget">Vaata Kõiki</a>
                     </div>
                 </section>
             </section>
@@ -223,13 +166,6 @@ $categories = get_imageCategories();
         <script type="text/javascript" src="js/jquery.flexslider.js"></script>
         <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
         <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
-        <!-- BG IMAGE -->
-        <script type="text/javascript">
-            jQuery(window).load(function() {
-                "use strict";
-                jQuery('body').backstretch("images/photos/bg-blurred.jpg");
-            });
-        </script>
         <!-- SPONSORS SLIDER -->
         <script type="text/javascript">
             jQuery(document).ready(function() {

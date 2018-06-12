@@ -22,6 +22,11 @@
                     <span>Blogi</span>
                 </a>
             </li>
+            <li>
+                <a href="contact.php">
+                    <span>Kontakt</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </section>

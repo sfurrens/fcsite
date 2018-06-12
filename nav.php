@@ -11,17 +11,9 @@
             <li>
                 <a href="galleries.php">Galerii</a>
             </li>
+            <li>
+                <a href="contact.php">Kontakt</a>
+            </li>
         </ul>
     </nav>
-    <!-- LOGIN MENU (not implemented yet) -->
-    <!-- nav id="submenu-login">
-        <ul>
-            <li>
-                <a href="index.html#">Register</a>
-            </li>
-            <li>
-                <a href="index.html#">Login</a>
-            </li>
-        </ul>
-    </nav -->
 </section>

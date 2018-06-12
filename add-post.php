@@ -3,8 +3,36 @@
 include('sql/conn.php');
 
 $info = get_info();
-$teamInfo = get_teamInfo();
-$playerCategories = get_playerCategories();
+
+if (isset($_POST['submit'])) {
+    $pass = $_POST['pass'];
+    
+    if ($pass == "pingpong") {
+        $file_name = basename($_FILES['image']['name']);
+        $file_tmp = $_FILES['image']['tmp_name'];
+        $file_ext = strtolower(end(explode('.', $_FILES['image']['name'])));
+        
+        if (in_array($file_ext, array("jpeg", "jpg", "png")) === false) {
+            print("<script>alert('only jpeg/jpg and png are supported: ".$file_ext."');</script>");
+        } else {
+            // upload image
+            $mysqli->query("insert into `".$_DB_UPLOADS_."`(name, ext) values(UUID(), '".$file_ext."');");
+            $last_id = $mysqli->insert_id;
+            $res = $mysqli->query("select `name` from `".$_DB_UPLOADS_."` where `id` = ".$last_id.";");
+            $r = $res->fetch_assoc();
+            
+            move_uploaded_file($file_tmp, "uploads/" . $r['name'] . "." . $file_ext);
+            
+            // adding new post
+            $mysqli->query("insert into `".$_DB_NEWS_."`(title, description, date, uploadId_image) values('".$_POST['title']."', '".$_POST['description']."', '".$_POST['date']."', ".$last_id.");");
+            
+            
+            print("<script>alert('success');</script>");
+        }
+    } else {
+        print("<script>alert('wrong pass');</script>");
+    }
+}
 
 ?>
 
@@ -33,10 +61,6 @@ $playerCategories = get_playerCategories();
     </head>
     
     <body>
-        <!-- SUB MENU -->
-        <?php include('nav.php'); ?>
-        <div class="clear"></div>
-        
         <!-- HEADER -->
         <header id="header">
             <div class="logo">
@@ -46,44 +70,21 @@ $playerCategories = get_playerCategories();
         </header>
         <div class="clear"></div>
         
-        <!-- MAIN MENU -->
-        <?php include('menu.php'); ?>
-        
         <!-- MAIN CONTAINER -->
         <section class="maincontainer">
-            <!-- PAGE TITLE -->
-            <div class="page-title"><?php print(htmlspecialchars($teamInfo['title'])); ?></div>
-            <!-- FEATURED IMAGE -->
-            <div class="page-img">
-                <?php print('<img src="'.$teamInfo['coverPath'].'" alt="Cover Image" />'); ?>
-                
-            </div>
             <!-- PAGE CONTAINER -->
             <section class="pagecontainer using-grid">
                 <div class="grid">
-                    <?php
-                    
-                    foreach ($playerCategories as &$playerCategory) {
-                        $players = get_playersByCategory($playerCategory['id']);
-                        
-                        print('
-                            <div class="unit one-quarter teamlist">
-                                <h3>'.$playerCategory['name'].'</h3>
-                                <ul>
-                        ');
-                        
-                        foreach ($players as &$player) {
-                            print('
-                                <li>'.$player['name'].'</li>
-                            ');
-                        }
-                        
-                        print('
-                                </ul>
-                            </div>
-                        ');
-                    }
-                    ?>
+                    <form enctype="multipart/form-data" action="?" method="post">
+                        <input type="text" placeholder="Title" name="title" />
+                        Description<br/>
+                        <textarea name="description"></textarea>
+                        <input type="date" name="date" />
+                        cover photo<br/>
+                        <input type="file" name="image" />
+                        <input type="password" placeholder="password" name="pass">
+                        <input type="submit" value="submit" name="submit" />
+                    </form>
                 </div>
             </section>
             <div class="clear"></div>
@@ -95,23 +96,6 @@ $playerCategories = get_playerCategories();
         <script type="text/javascript" src="js/backstretch.js"></script>
         <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-        <!-- POPUP BOXES -->
-        <script type="text/javascript">
-            jQuery(document).ready(function() {
-                jQuery('.popup-with-zoom-anim').magnificPopup({
-                    type: 'inline',
-                    fixedContentPos: false,
-                    fixedBgPos: true,
-                    overflowY: 'auto',
-                    closeBtnInside: true,
-                    preloader: false,
-                    midClick: true,
-                    removalDelay: 300,
-                    mainClass: 'my-mfp-zoom-in'
-                });
-            });
-        </script>
         <script src="js/custom.js" type="text/javascript"></script>
     </body>
-
 </html>

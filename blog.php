@@ -8,8 +8,7 @@ $info = get_info();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-    
+<html lang="et">
     <head>
         <title>Blogi - <?php print(htmlspecialchars($info['title'])) ?></title>
         <!-- META TAGS -->
@@ -91,14 +90,6 @@ $info = get_info();
                 </section>
                 <!-- RIGHT CONTAINER -->
                 <section class="rightcontainer">
-                    <!-- SIDEBAR BOX (not implemented) -->
-                    <!-- div class="sidebarbox">
-                        <h3>Search</h3>
-                        <form id="searchform" class="searchbox">
-                            <input type="text" id="search" class="field searchtext" placeholder="Keyword..." />
-                            <input type="submit" class="button" name="submit" value="Go" />
-                        </form>
-                    </div -->
                     <!-- SIDEBAR BOX -->
                     <div class="sidebarbox">
                         <h3>Viimased Postitused</h3>
@@ -126,13 +117,6 @@ $info = get_info();
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/backstretch.js"></script>
         <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
-        <!-- BG IMAGE -->
-        <script type="text/javascript">
-            jQuery(window).load(function() {
-                "use strict";
-                jQuery('body').backstretch("images/photos/bg-blurred.jpg");
-            });
-        </script>
         <script src="js/custom.js" type="text/javascript"></script>
     </body>
 

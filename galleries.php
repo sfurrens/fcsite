@@ -8,8 +8,7 @@ $categories = get_imageCategories();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-    
+<html lang="et">
     <head>
         <title>Galerii - <?php print(htmlspecialchars($info['title'])) ?></title>
         <!-- META TAGS -->
@@ -106,13 +105,6 @@ $categories = get_imageCategories();
         <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
         <script type="text/javascript" src="js/easyResponsiveTabs.js"></script>
         <script type="text/javascript" src="js/gallery.js"></script>
-        <!-- BG IMAGE -->
-        <script type="text/javascript">
-            jQuery(window).load(function() {
-                "use strict";
-                jQuery('body').backstretch("images/photos/bg-blurred.jpg");
-            });
-        </script>
         <!-- VERTICAL TABS -->
         <script type="text/javascript">
             jQuery(document).ready(function() {
